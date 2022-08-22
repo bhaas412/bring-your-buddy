@@ -1,13 +1,17 @@
 const User = require('./User');
-const Project = require('./Project');
+const Review = require('./Review');
 
-User.hasMany(Project, {
+// User can post many reviews
+User.hasMany(Review, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+// A review belongs to a user
+Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Project };
+// TODO: Additional tables for comments, etc.?
+
+module.exports = { User, Review };
