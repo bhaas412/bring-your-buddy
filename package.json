@@ -1,4 +1,16 @@
 {
+<<<<<<< HEAD
+  "name": "bring-my-buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build:tailwinds": "tailwind build src/style.css -o public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaas412/bring-my-buddy.git"
+=======
   "name": "crowd-funding",
   "version": "1.0.0",
   "description": "",
@@ -7,10 +19,21 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seed.js"
+>>>>>>> a4525ed866da363379c0a94e1cb3260c755d0193
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
+  "bugs": {
+    "url": "https://github.com/bhaas412/bring-my-buddy/issues"
+  },
+  "homepage": "https://github.com/bhaas412/bring-my-buddy#readme",
+  "dependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {}
+=======
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
@@ -26,4 +49,5 @@
     "eslint-config-prettier": "^6.15.0",
     "prettier": "^2.1.2"
   }
+>>>>>>> a4525ed866da363379c0a94e1cb3260c755d0193
 }
