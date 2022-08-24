@@ -8,8 +8,6 @@ class User extends Model {
   }
 }
 
-// TODO: Add additional keys to User table (pet, etc.)
-
 User.init(
   {
     id: {
@@ -37,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    pet: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    }
   },
   {
     hooks: {

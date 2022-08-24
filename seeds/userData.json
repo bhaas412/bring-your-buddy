@@ -2,21 +2,25 @@
   {
     "name": "Brandon",
     "email": "brandon@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "pet": ""
   },
   {
     "name": "Jaquel",
     "email": "jaquel@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "pet": ""
   },
   {
     "name": "Kayla",
     "email": "kayla@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "pet": ""
   },
   {
     "name": "Sophie",
     "email": "sophie@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "pet": ""
   }
 ]

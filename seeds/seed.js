@@ -19,6 +19,10 @@ const seedDatabase = async () => {
     });
   }
 
+  // Create Location table
+
+  // Create Comment table
+
   process.exit(0);
 };
 

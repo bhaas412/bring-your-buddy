@@ -1,17 +1,31 @@
-const User = require('./User');
+const Comment = require('./Comment');
 const Review = require('./Review');
+const User = require('./User');
+// const Location = require('./Location');
 
-// User can post many reviews
 User.hasMany(Review, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+    foreignKey: 'user_id'
 });
 
-// A review belongs to a user
 Review.belongsTo(User, {
-  foreignKey: 'user_id'
+    foreignKey: 'user_id'
 });
 
-// TODO: Additional tables for comments, etc.?
+Comment.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
-module.exports = { User, Review };
+Comment.belongsTo(Review, {
+    foreignKey: 'review_id',
+    onDelete: 'cascade'
+});
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id'
+});
+
+Review.hasMany(Comment, {
+    foreignKey: 'review_id'
+});
+
+module.exports = { Comment, Review, User };
