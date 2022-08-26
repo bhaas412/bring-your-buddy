@@ -1,1 +1,1 @@
-# Bring My Buddy
+# Bring Your Buddy

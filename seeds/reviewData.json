@@ -1,5 +1,14 @@
 [
   {
-
+    "review_text": "This place is awesome!",
+    "pet_type": "Dog"
+  },
+  {
+    "review_text": "This place sucks!",
+    "pet_type": "Dog"
+  },
+  {
+    "review_text": "This place is alright.",
+    "pet_type": "Dog"
   }
 ]

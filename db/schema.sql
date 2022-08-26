@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS bringmybuddy_db;
-CREATE DATABASE bringmybuddy_db;
+DROP DATABASE IF EXISTS bringyourbuddy_db;
+CREATE DATABASE bringyourbuddy_db;

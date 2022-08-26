@@ -89,12 +89,8 @@ router.get('/:id', (req, res) => {
 });
 
 // create reviews
-router.review('/', withAuth, (req, res) => {
-    Review.create({
-        title: req.body.title,
-        review_body: req.body.review_body,
-        user_id: req.session.user_id
-    })
+router.post('/', withAuth, (req, res) => {
+    Review.create(create(req.body))
     .then(data => res.json(data))
     .catch(err => {
         console.log(err);
@@ -103,7 +99,7 @@ router.review('/', withAuth, (req, res) => {
 });
 
 // edit personal review
-router.put('/:id', withAuth, (req, res) => {
+router.post('/:id', withAuth, (req, res) => {
     Review.update(
         {
             title: req.body.title,

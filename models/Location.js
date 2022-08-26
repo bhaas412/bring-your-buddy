@@ -20,23 +20,22 @@ Location.init(
                 len: [1]
             }
         },
-        location: {
+        location_type: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1]
-            }
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        }
+        location_address: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        pet_type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+          }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'location'

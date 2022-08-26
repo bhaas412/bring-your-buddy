@@ -3,8 +3,6 @@ const sequelize = require('../config/connection');
 
 class Review extends Model {}
 
-// TODO: Add additional keys to Review table
-
 Review.init(
   {
     id: {
@@ -13,17 +11,17 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    location: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
+    review_text: {
       type: DataTypes.STRING,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    pet_type: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -32,10 +30,16 @@ Review.init(
         key: 'id',
       },
     },
+    location_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'location',
+        key: 'id',
+      },
+    }
   },
   {
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'review',
