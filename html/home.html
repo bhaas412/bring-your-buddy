@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <script type="javascript" src="home.js"></script>
+   
   </head>
 
   <body class="font-oswald">
@@ -24,13 +26,13 @@
               class="object-fill h-20 w-30 p-0"
               alt="Logo">
 
-        <span class="font-oswald text-5xl  mt-6 ml-2 text-white font-semibold ">Bring Your Buddy</span>
+        <span class="font-oswald text-5xl  mt-4 ml-6 text-white font-semibold ">Bring Your Buddy</span>
           </a>
 
   
           <!-- buttons -->
  
-          <div class="absolute pl-40 ml-80 ui-monospace text-xl text-white mt-6 flex">
+          <div class=" hidden xl:flex absolute pl-40 ml-80 ui-monospace text-xl text-white mt-6">
             <button
               type="button"
               class=" px-5 py-2.5  pr-4 text-center rounded-l-xl"
@@ -51,11 +53,29 @@
           </button>
           </div>
 
-          <!--DROPDOWN-->
-          
+          <!--mobile button goes here-->
+<div class="  md:hidden flex items-center">
+  <button class="mobile-menuBtn">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+  </svg>
+</button>
+</div>
 
+<!--mobile menu-->
+<div class="mobile-menu hidden">
+<a href="#" class="block py-2 px-4 text-sm">Login</a>
+<a href="#" class="block py-2 px-4 text-sm">Blog</a>
+<a href="#">Sign Up</a>
+</div>
+
+
+
+
+          <!--DROPDOWN-->
+        
    <!-- searches -->
-   <div class=" flex absolute right-0 items-end py-6 w-full block flex-grow lg:flex lg:items-center lg:w-auto font-sans ">
+   <div class=" hidden xl:flex absolute right-0 items-end py-6 w-full  flex-grow lg:flex lg:items-center lg:w-auto font-sans ">
 
     <div class="flex">
     
@@ -115,7 +135,7 @@
           <!-- textbox -->
 
           <div
-            class="mt-40 ml-55 bg-clip-box p-6  backdrop-blur-md text-left rounded-md mb-8  mr-10 max-w-md bottom-0 "
+            class="mt-40 ml-50 bg-clip-box p-10 backdrop-blur-md text-left rounded-md mb-8  mr-10 max-w-md bottom-0 "
           >
             <p class="text-3xl mb-4  text-white font-oswald text-left ">Bring Your Buddy gets tails wagging all over the globe!
             </p>
@@ -127,9 +147,9 @@
 
         
             <!-- recent -->
-            <container class="">
+            <container class=" bg-gray-600 bg-opacity-60">
             <div id="blog"
-              class=" font-mono  bg-orange-400 bg-opacity-20 rounded-md h-auto p-2 text-3xl text-center mb-2"
+              class=" font-mon ml-6 mr-6 rounded-md h-auto p-2 text-3xl text-center mb-2"
             >
               <p>Recent Posts</p>
               
