@@ -5,115 +5,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bring Your Buddy</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   </head>
 
-  <body>
-    <div class="absolute inset-0 bg-sky-100 flex flex-col min-h-0 min-w-0 ">
+  <body class="font-oswald">
+    <div class=" absolute inset-0 bg-sky-100 flex flex-col min-h-0 min-w-0 ">
       <!-- nav -->
-      <nav class="bg-blue-500 px-2 py-2.5 w-full z-20 top-0 left-0 shadow shadow-blue-500/40">
+      <nav class="bg-lime-800 bg-opacity-60 sha  drop-shadow-xl px-2 py-2.5 pv-8 w-full z-20 top-0 left-0 h-32">
         <div class="container flex items-center justify-between flex-wrap">
           <!-- logo -->
           <a href="/home.html" class="flex mx-3">
             <img
-              src="https://freesvg.org/img/Paw_Print.png"
-              class="h-6 sm:h-9"
-              alt="Logo"
-            />
-            <span
-              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-              >B.y.B</span
-            >
-          </a>
-          <!-- searches -->
-          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto ">
-            <!-- search1 -->
-            <div class="flex">
-              <button
-                type="button"
-                data-collapse-toggle="navbar-search"
-                aria-controls="navbar-search"
-                aria-expanded="false"
-                class="text-gray-500 pl-2.5 mr-1"
-              >
-                <span class="sr-only">Search</span>
-              </button>
-              <div class="hidden relative md:block">
-                <div
-                  class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-                >
-                  <span class="sr-only">Search icon</span>
-                </div>
-                <input
-                  type="text"
-                  id="search-navbar"
-                  class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-l-xl"
-                  placeholder="Search..."
-                />
-              </div>
-            </div>
-            <!-- search2 -->
-            <div class="flex">
-              <button
-                type="button"
-                data-collapse-toggle="navbar-search"
-                aria-controls="navbar-search"
-                aria-expanded="false"
-                class="text-gray-500 py-2.5 mr-1"
-              >
-                <span class="sr-only">Location</span>
-              </button>
-              <div class="hidden relative md:block">
-                <div
-                  class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-                >
-                  <span class="sr-only">Search icon</span>
-                </div>
-                <input
-                  type="text"
-                  id="search-navbar"
-                  class="block p-2 pl-10 w-full text-gray-900 bg-gray-50"
-                  placeholder="Search..."
-                />
-              </div>
-            </div>
-            <!-- button -->
-            <button
-              type="button"
-              class="bg-blue-300 text-sm px-5 py-2.5 text-center rounded-r-xl"
-            >
-              Go
-            </button>
-          </div>
+              src="https://lh3.googleusercontent.com/uhl-Jbgc9kvzG0RlBedFCMhnAfyc_8ydsViUO5qf3gxMMdKlAzz61t7Hb2Gob_9nkPFmucO33C4VzCt-kNhbfDTWMUD8IbdJMFAIjFwNGxKcnrZ7s7q7JuAOPxYMHNq2J5w3fkkvxj8=w2400"
+              class="object-fill h-20 w-30 p-0"
+              alt="Logo">
 
+        <span class="font-oswald text-5xl  mt-6 ml-2 text-white font-semibold ">Bring Your Buddy</span>
+          </a>
+
+  
           <!-- buttons -->
-          <div class="text-lg text-white absolute right-0 flex">
+ 
+          <div class="absolute pl-40 ml-80 ui-monospace text-xl text-white mt-6 flex">
             <button
               type="button"
-              class="bg-blue-400 px-5 py-2.5 text-center rounded-l-xl"
+              class=" px-5 py-2.5  pr-4 text-center rounded-l-xl"
             >
               Login
             </button>
             <button
               type="button"
-              class="bg-blue-700  px-5 py-2.5 text-center"
+              class=" px-5 py-2.5 text-center"
             >
               Sign Up
             </button>
+            <button
+            type="button"
+            class=" px-5 py-2.5  pr-4 text-center rounded-l-xl"
+          >
+          <a href="#blog">Blog</a> 
+          </button>
           </div>
+
+          <!--DROPDOWN-->
+          
+
+   <!-- searches -->
+   <div class=" flex absolute right-0 items-end py-6 w-full block flex-grow lg:flex lg:items-center lg:w-auto font-sans ">
+
+    <div class="flex">
+    
+<form>
+  <div class="flex mr-6">
+      <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">All categories <svg hidden="true" class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+      <div id="dropdown" class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 block" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(4.8px, 72px, 0px);" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
+          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
+          <li>
+              <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hotels</button>
+          </li>
+          <li>
+              <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Restaurants</button>
+          </li>
+          <li>
+              <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shops</button>
+          </li>
+          <li>
+            <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Beaches</button>
+        </li>
+          </ul>
+      </div>
+      <div class="relative w-full">
+          <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Location..." required="">
+          <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-orange-600 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <span class="sr-only">Search</span>
+          </button>
+      </div>
+  </div>
+</form>
+
+    </div>
+  
+
+
+</div>
+
         </div>
       </nav>
 
+
+
       <!-- main -->
 
-      <div class="grid grid-cols-10 gap-0 grid-flow-row-dense h-screen min-h-0 min-h-0 min-w-0">
         <!-- left -->
-
+<container class="  w-full h-full">
         <div
           style="
-            background-image: url('https://images.freeimages.com/images/large-previews/537/dog-1550881.jpg');
+            background-image: url('https://images.pexels.com/photos/11671289/pexels-photo-11671289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
           "
-          class="bg-no-repeat bg-cover col-span-7 bg-blue-300 px-3 flex flex-col"
+          class="bg-repeat bg-cover col-span-10  h-screen  bg-lime-800 bg-opacity-60 px-3 flex flex-col"
         >
         <!-- float text -->
         
@@ -121,36 +115,35 @@
           <!-- textbox -->
 
           <div
-            class="p-3 mt-auto mb-3  mb-3 bg-clip-box p-6 bg-blue-50 text-center rounded-md"
+            class="mt-40 ml-55 bg-clip-box p-6  backdrop-blur-md text-left rounded-md mb-8  mr-10 max-w-md bottom-0 "
           >
-            <p class="text-5xl mb-4">Bring Your Buddy gets tails wagging all over the globe!
+            <p class="text-3xl mb-4  text-white font-oswald text-left ">Bring Your Buddy gets tails wagging all over the globe!
             </p>
-            <p class="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis similique nemo quibusdam sequi. Minima beatae inventore a quia, magni explicabo alias impedit magnam quam, tempora, labore tenetur nesciunt porro nostrum!</p>
+            <p class="text-2xl text-white  font-oswald">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis similique nemo quibusdam sequi. Minima beatae inventore a quia, magni explicabo alias impedit magnam quam, tempora, labore tenetur nesciunt porro nostrum!</p>
           </div>
         </div>
-
+</container  >
         <!-- right -->
 
-        <div class="col-span-3 bg-gradient-to-t from-blue-400 p-3 flex-col flex items-center min-h-0">
-          <div
-            class="container flex flex-col bg-blue-50 bg-opacity-10 p-3 flex h-screen max-h-screen items-center overflow-y-auto overscroll-contain"
-          >
+        
             <!-- recent -->
-            <div
-              class="container bg-blue-50 rounded-md h-auto p-2 text-6xl text-center mb-2"
+            <container class="">
+            <div id="blog"
+              class=" font-mono  bg-orange-400 bg-opacity-20 rounded-md h-auto p-2 text-3xl text-center mb-2"
             >
               <p>Recent Posts</p>
+              
             </div>
 
             <!-- card -->
 
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
+            <div class="flex bg-lime-800 bg-opacity-60 w-full my-2 ">
               <div
-                class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
+                class="bg-blue-50 bg-opacity-100 rounded-md flex flex-col justify-between p-2"
               >
                 <!-- location -->
                 <div
-                  class="container bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center"
+                  class="container bg-orange-100 bg-opacity-5 text-center rounded-md 0 h-auto p-2 text-2xl text-center"
                 >
                   <p>Somewhere, Someplace</p>
                 </div>
@@ -159,11 +152,11 @@
 
                 <div class="w-auto h-auto block py-2 text-6xl text-center">
                   <div
-                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85"
+                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-orange-400 bg-opacity-20"
                   >
                     <!-- pfp -->
                     <img
-                      class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
+                      class="w-12 h-12 mr-2 rounded-full "
                       src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
                       alt=""
                     />
@@ -178,13 +171,13 @@
                       class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
                     >
                       <!-- star -->
-                      <div class="text-4xl ml-2">
+                      <div class="text-4xl ml-6">
                         <p>✪✪✪✪✪</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
+                <div class="my-2 justify-end bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
                   <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Voluptates possimus magni facere ab veniam eaque natus
@@ -207,7 +200,7 @@
             
             <!-- card -->
 
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
+            <div class="flex w-full my-2 ">
               <div
                 class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
               >
@@ -222,11 +215,11 @@
 
                 <div class="w-auto h-auto block py-2 text-6xl text-center">
                   <div
-                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85"
+                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-orange-400 bg-opacity-20"
                   >
                     <!-- pfp -->
                     <img
-                      class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
+                      class="w-12 h-12 mr-2 rounded-full "
                       src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
                       alt=""
                     />
@@ -241,13 +234,13 @@
                       class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
                     >
                       <!-- star -->
-                      <div class="text-4xl ml-2">
+                      <div class="text-4xl ml-6">
                         <p>✪✪✪✪✪</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
+                <div class="my-2 justify-end bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
                   <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Voluptates possimus magni facere ab veniam eaque natus
@@ -270,7 +263,7 @@
             
             <!-- card -->
 
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
+            <div class="flex w-full my-2 ">
               <div
                 class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
               >
@@ -285,11 +278,11 @@
 
                 <div class="w-auto h-auto block py-2 text-6xl text-center">
                   <div
-                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85"
+                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-orange-400 bg-opacity-20"
                   >
                     <!-- pfp -->
                     <img
-                      class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
+                      class="w-12 h-12 mr-2 rounded-full "
                       src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
                       alt=""
                     />
@@ -304,13 +297,77 @@
                       class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
                     >
                       <!-- star -->
-                      <div class="text-4xl ml-2">
+                      <div class="text-4xl ml-6">
                         <p>✪✪✪✪✪</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
+                <div class="my-2 justify-end bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Voluptates possimus magni facere ab veniam eaque natus
+                    officiis deserunt adipisci est. Corrupti perspiciatis
+                    dolorem accusantium laudantium? Nemo saepe iusto quisquam
+                    officia!
+                  </p>
+                  <!-- post link -->
+                  <a
+                    class="text-blue-500 underline"
+                    href="https://www.w3schools.com"
+                    >Continue reading........</a
+                  >
+                </div>
+              </div>
+            </div>
+
+
+            <!-- end card -->
+
+            
+            <!-- card -->
+
+            <div class="flex w-full my-2 ">
+              <div
+                class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
+              >
+                <!-- location -->
+                <div
+                  class="container bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center"
+                >
+                  <p>Somewhere, Someplace</p>
+                </div>
+
+                <!-- user and rating -->
+
+                <div class="w-auto h-auto block py-2 text-6xl text-center">
+                  <div
+                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-orange-400 bg-opacity-20"
+                  >
+                    <!-- pfp -->
+                    <img
+                      class="w-12 h-12 mr-2 rounded-full "
+                      src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
+                      alt=""
+                    />
+                    <div class="text-lg mx-2">
+                      <p>Username</p>
+                      <p>01/02/03</p>
+                    </div>
+
+                    <!-- rating -->
+
+                    <div
+                      class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
+                    >
+                      <!-- star -->
+                      <div class="text-4xl ml-6">
+                        <p>✪✪✪✪✪</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-2 justify-end bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
                   <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Voluptates possimus magni facere ab veniam eaque natus
@@ -333,7 +390,7 @@
             
             <!-- card -->
 
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
+            <div class="flex w-full my-2 ">
               <div
                 class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
               >
@@ -348,11 +405,11 @@
 
                 <div class="w-auto h-auto block py-2 text-6xl text-center">
                   <div
-                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85"
+                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-orange-400 bg-opacity-20"
                   >
                     <!-- pfp -->
                     <img
-                      class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
+                      class="w-12 h-12 mr-2 rounded-full "
                       src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
                       alt=""
                     />
@@ -367,13 +424,13 @@
                       class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
                     >
                       <!-- star -->
-                      <div class="text-4xl ml-2">
+                      <div class="text-4xl ml-6">
                         <p>✪✪✪✪✪</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
+                <div class="my-2 justify-end bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
                   <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Voluptates possimus magni facere ab veniam eaque natus
@@ -391,68 +448,6 @@
               </div>
             </div>
 
-            <!-- end card -->
-
-            
-            <!-- card -->
-
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
-              <div
-                class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
-              >
-                <!-- location -->
-                <div
-                  class="container bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center"
-                >
-                  <p>Somewhere, Someplace</p>
-                </div>
-
-                <!-- user and rating -->
-
-                <div class="w-auto h-auto block py-2 text-6xl text-center">
-                  <div
-                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85"
-                  >
-                    <!-- pfp -->
-                    <img
-                      class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
-                      src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-                      alt=""
-                    />
-                    <div class="text-lg mx-2">
-                      <p>Username</p>
-                      <p>01/02/03</p>
-                    </div>
-
-                    <!-- rating -->
-
-                    <div
-                      class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
-                    >
-                      <!-- star -->
-                      <div class="text-4xl ml-2">
-                        <p>✪✪✪✪✪</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptates possimus magni facere ab veniam eaque natus
-                    officiis deserunt adipisci est. Corrupti perspiciatis
-                    dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                    officia!
-                  </p>
-                  <!-- post link -->
-                  <a
-                    class="text-blue-500 underline"
-                    href="https://www.w3schools.com"
-                    >Continue reading........</a
-                  >
-                </div>
-              </div>
-            </div>
 
             <!-- end card -->
 
@@ -460,7 +455,7 @@
             
             <!-- card -->
 
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
+            <div class="flex w-full my-2 ">
               <div
                 class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2"
               >
@@ -472,14 +467,13 @@
                 </div>
 
                 <!-- user and rating -->
-
                 <div class="w-auto h-auto block py-2 text-6xl text-center">
                   <div
-                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85"
+                    class="flex items-center content-box  w-full rounded-full py-1 px-3 bg-orange-400 bg-opacity-20"
                   >
                     <!-- pfp -->
                     <img
-                      class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
+                      class="w-12 h-12 mr-2 rounded-full "
                       src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
                       alt=""
                     />
@@ -494,13 +488,13 @@
                       class="flex content-box rounded-full bg-blue-50 py-1 px-3 ml-auto"
                     >
                       <!-- star -->
-                      <div class="text-4xl ml-2">
+                      <div class="text-4xl ml-6">
                         <p>✪✪✪✪✪</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
+                <div class="my-2 justify-end bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
                   <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Voluptates possimus magni facere ab veniam eaque natus
@@ -517,6 +511,7 @@
                 </div>
               </div>
             </div>
+            </container>
 
             <!-- end card -->
 
