@@ -11,8 +11,13 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    review_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     review_text: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,

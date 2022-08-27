@@ -1,9 +1,65 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Review, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        id: req.session.user_id
+    },
+    attributes: { exclude: ['password']},
+    include: [
+        {
+            model: Review,
+            attributes: [
+                'id',
+                'review_title',
+                'review_text',
+                'date_created',
+                'pet_type',
+            ],
+            include: [
+                {
+                    model: User,
+                    attributes: ['name']
+                },
+                {
+                    model: Comment,
+                    attributes: [
+                        'id',
+                        'comment_text',
+                        'post_id',
+                        'user_id',
+                        'created_at',
+                    ],
+                    include: {
+                        model: User,
+                        attributes: ['name']
+                    }
+                }
+            ]
+        },
+        {
+            model: Location,
+            attributes: [
+                'id',
+                'location_name',
+                'location_type',
+                'location_address',
+                'pet_type',
+            ],
+        }
+    ]
+    })
 
+    let userInfo = userData.get({ plain: true });
+    res.render('homepage', { userInfo, loggedIn: true });
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 // Use withAuth middleware to prevent access to route

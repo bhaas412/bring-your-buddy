@@ -8,27 +8,28 @@ router.get('/', (req, res) => {
     Review.findAll({
         attributes: [
             'id',
-            'title',
-            'review_body',
-            'created_at'
+            'review_title',
+            'review_text',
+            'date_created',
+            'pet_type'
         ],
         include: [
             { 
                 model: User,
-                attributes: ['username'] 
+                attributes: ['name'] 
             },
             {
                 model: Comment,
                 attributes: [
                     'id',
                     'comment_text',
-                    'review_id',
                     'user_id',
+                    'review_id',
                     'created_at'
                 ],
                 include: {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['name']
                 }
             }
         ],
