@@ -1,0 +1,39 @@
+<article class="grid flex col_12">
+    <a href="/dashboard"> &larr; Back To Dashboard</a>
+    <h2>
+        Edit Your Post
+    </h2>
+    <form class="edit-post-form">
+        <div>
+            <label for="post-title" >Title:</label>
+            <input name="post-title" type="text" value="{{post.title}}" />
+        </div>
+        <div>
+            <label for="post-body">Post Text:</label>
+            <input id="post-body" class="post-text-area" name="post-body" maxlength="800" value="{{post.post_body}}" />
+        </div>
+        <div>
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </div>
+        <button type="submit" class="save-btn green">Save Post</button>
+        <button type="submit" class="delete-post-btn red">Delete Post</button>
+    </form>
+</article>
+<form class="comment-form grid flex col_12">
+    <div>
+        <textarea name="comment-body" placeholder="Write your comment here"></textarea>
+    </div>
+
+    <div>
+        <button class="btn blue" type="submit">Add Comment</button>
+    </div>
+</form>
+{{#if loggedIn}}
+
+{{> comments post.comments}}
+
+{{/if}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

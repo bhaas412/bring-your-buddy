@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Friendly Locations</title>
+    <link rel="stylesheet" type="text/css" href="/css/kickstart.css" media="all" />
+    <link rel="stylesheet" href="/stylesheet/correcting-style.css" />
+
+   {{!-- <script type="text/javascript" src="insert api here"></script> --}}
+   {{!--<script src="insert api here"></script> --}}
+
+    <script type="text/javascript" src="/javascript/kickstart.js"></script>
+
+</head>
+
+<body>
+        <header>
+            <h1>
+                <a href="/">Campgrounds</a>
+            </h1>
+            <nav>
+                <ul>
+                    {{#if loggedIn}}
+                    <li><a href="/dashboard"><span>Dashboard</span></a></li>
+                    <li><button id="logout" class="medium"><span>Logout</span></button></li>
+
+                    {{else}}
+                    <li><a href="/login"><span>Login</span></a></li>
+                    <li><a href="/signup"><span>Sign up</span></a></li>
+                    {{/if}}
+                </ul>
+
+            </nav>
+        </header>
+
+        <main class="grid flex col_10">
+            {{{ body }}}
+        </main>
+        <footer class="grid flex col_12">
+            <h4>&copy;Bring Your Buddy 2020</h4>
+        </footer>
+
+</body>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+
+</html>

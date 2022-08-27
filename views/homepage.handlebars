@@ -1,0 +1,21 @@
+<section class="hero">
+    <div class="about-us-hero">
+        <h2>Welcome to Bring Your Buddy!</h2>
+        <p>Your one stop search for pet friendly locations in the US!</p>
+    </div>
+</section>
+
+    <div class="post-container col_6">
+        <ul class="post-list">
+            {{#each posts as |post|}}
+            <li>
+                {{> post-details post }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+</section>
+
+
+<script src="/javascript/clear-results.js"></script>

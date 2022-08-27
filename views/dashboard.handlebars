@@ -1,0 +1,45 @@
+<section class="create-blog-container grid flex col_12">
+    <h2>Create new Blog Post!</h2>
+    <p>We'd love to hear about any pet friendly places you have visited!</p>
+    <form class="new-post-form">
+        <div>
+            <label for="post-title">Title Of Your Post:</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+            <label for="post-body">Write Your Post Here:</label>
+            <input id="post-body" class="create-post-textarea" name="post-body" maxlength="800"
+                value="{{post.post_body}}" />
+        </div>
+        <button type="submit" class="medium green">Post!</button>
+    </form>
+</section>
+
+{{#if userInfo.posts.length}}
+<section class="col_6">
+  <h2 class="center">Your Posts</h2>
+  <ul class="post-list">
+    {{#each userInfo.posts as |post|}}
+    <li>
+      {{> post-details post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-url">Edit Post</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
+
+{{#if userInfo.locations.length}}
+<section class="col_6 center">
+    <h2 class="center">Your Saved Locations</h2>
+    <ul class="location-ul-wrapper col_12 alt">
+        {{#each userInfo.locations as |location|}}
+
+        {{> location-details location}}
+
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
