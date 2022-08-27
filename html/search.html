@@ -8,100 +8,89 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
+  <body class="aspect-auto font-oswald">
     <div
       class="absolute inset-0 bg-gradient-to-t from-blue-300 via-sky-200 flex flex-col min-h-0 min-w-0"
     >
       <!-- nav -->
-      <nav
-        class="bg-blue-500 px-2 py-2.5 w-full z-20 top-0 left-0 shadow shadow-blue-500/40"
-      >
-        <div class="container flex items-center justify-between flex-wrap">
-          <!-- logo -->
-          <a href="/home.html" class="flex mx-3">
-            <img
-              src="https://freesvg.org/img/Paw_Print.png"
-              class="h-6 sm:h-9"
-              alt="Logo"
-            />
-            <span
-              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-              >B.y.B</span
-            >
-          </a>
-          <!-- searches -->
-          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <!-- search1 -->
-            <div class="flex">
-              <button
-                type="button"
-                data-collapse-toggle="navbar-search"
-                aria-controls="navbar-search"
-                aria-expanded="false"
-                class="text-gray-500 pl-2.5 mr-1"
-              >
-                <span class="sr-only">Search</span>
-              </button>
-              <div class="hidden relative md:block">
-                <div
-                  class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-                >
-                  <span class="sr-only">Search icon</span>
-                </div>
-                <input
-                  type="text"
-                  id="search-navbar"
-                  class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-l-xl"
-                  placeholder="Search..."
-                />
-              </div>
-            </div>
-            <!-- search2 -->
-            <div class="flex">
-              <button
-                type="button"
-                data-collapse-toggle="navbar-search"
-                aria-controls="navbar-search"
-                aria-expanded="false"
-                class="text-gray-500 py-2.5 mr-1"
-              >
-                <span class="sr-only">Location</span>
-              </button>
-              <div class="hidden relative md:block">
-                <div
-                  class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
-                >
-                  <span class="sr-only">Search icon</span>
-                </div>
-                <input
-                  type="text"
-                  id="search-navbar"
-                  class="block p-2 pl-10 w-full text-gray-900 bg-gray-50"
-                  placeholder="Search..."
-                />
-              </div>
-            </div>
-            <!-- button -->
-            <button
-              type="button"
-              class="bg-blue-300 text-sm px-5 py-2.5 text-center rounded-r-xl"
-            >
-              Go
-            </button>
-          </div>
+      <div class=" absolute inset-0 bg-sky-100 flex flex-col min-h-0 min-w-0 ">
+        <!-- nav -->
+        <nav class="bg-lime-800 bg-opacity-60 sha px-2 py-2.5 pv-8 w-full z-20 top-0 left-0 h-32">
+          <div class="container flex items-center justify-between flex-wrap">
+            <!-- logo -->
+            <a href="/home.html" class="flex mx-3">
+              <img
+                src="https://lh3.googleusercontent.com/uhl-Jbgc9kvzG0RlBedFCMhnAfyc_8ydsViUO5qf3gxMMdKlAzz61t7Hb2Gob_9nkPFmucO33C4VzCt-kNhbfDTWMUD8IbdJMFAIjFwNGxKcnrZ7s7q7JuAOPxYMHNq2J5w3fkkvxj8=w2400"
+                class="object-fill h-20 w-30 p-0"
+                alt="Logo">
+  
+          <span class="font-oswald text-4xl  mt-6 ml-2 text-white font-semibold ">Bring Your Buddy</span>
+            </a>
 
+            
+  
           <!-- buttons -->
-          <div class="text-lg text-white absolute right-0 flex">
+ 
+          <div class="absolute pl-20 ml-72 ui-monospace text-xl text-white mt-6 flex">
             <button
               type="button"
-              class="bg-blue-400 px-5 py-2.5 text-center rounded-l-xl"
+              class=" px-5 py-2.5  pr-4 text-center rounded-l-xl"
             >
               Login
             </button>
-            <button type="button" class="bg-blue-700 px-5 py-2.5 text-center">
+            <button
+              type="button"
+              class=" px-5 py-2.5 text-center"
+            >
               Sign Up
             </button>
+            <button
+            type="button"
+            class=" px-5 py-2.5  pr-4 text-center rounded-l-xl"
+          >
+            Blog
+          </button>
           </div>
+
+
+     <!-- searches -->
+   <div class="  absolute right-0 items-end py-6 w-full block flex-grow lg:flex lg:items-center lg:w-auto font-sans ">
+
+    <div class="flex">
+    
+<form>
+  <div class="flex mr-6">
+      <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">All categories <svg aria-hidden="true" class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+      <div id="dropdown" class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 block" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(4.8px, 72px, 0px);" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
+          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
+          <li>
+              <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hotels</button>
+          </li>
+          <li>
+              <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Restaurants</button>
+          </li>
+          <li>
+              <button type="button" class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shops</button>
+          </li>
+        
+          </ul>
+      </div>
+      <div class="relative w-full">
+          <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Location..." required="">
+          <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-orange-600 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <span class="sr-only">Search</span>
+          </button>
+      </div>
+  </div>
+</form>
+
+    </div>
+  
+
+
+</div>
+
         </div>
       </nav>
 
@@ -116,17 +105,17 @@
           <!--filters -->
 
           <div
-            class="p-3 h-full my-3 bg-clip-box bg-blue-300 bg-opacity-50 text-center rounded-md"
+            class="p-3 h-full my-3 bg-clip-box bg-gray-300 bg-opacity-50 text-center rounded-md"
           >
-            <p class="text-5xl m-4 pb-6">Filter posts by:</p>
+            <p class="text-3xl m-4 pb-6">Filter posts by:</p>
             <hr />
             <!-- list -->
             <div class="container my-5 flex justify-center">
-              <div class="flex text-4xl m-auto">
+              <div class="flex text-2xl m-auto">
                 <div>
                   <div class="form-check">
                     <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
+                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
                       type="checkbox"
                       value=""
                       id="flexCheckDefault"
@@ -140,7 +129,7 @@
                   </div>
                   <div class="form-check">
                     <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
+                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
                       type="checkbox"
                       value=""
                       id="flexCheckDefault"
@@ -154,7 +143,7 @@
                   </div>
                   <div class="form-check">
                     <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
+                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
                       type="checkbox"
                       value=""
                       id="flexCheckDefault"
@@ -168,7 +157,7 @@
                   </div>
                   <div class="form-check">
                     <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
+                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
                       type="checkbox"
                       value=""
                       id="flexCheckDefault"
@@ -182,7 +171,7 @@
                   </div>
                   <div class="form-check">
                     <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
+                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
                       type="checkbox"
                       value=""
                       id="flexCheckDefault"
@@ -196,7 +185,7 @@
                   </div>
                   <div class="form-check">
                     <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
+                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
                       type="checkbox"
                       value=""
                       id="flexCheckChecked"
@@ -255,14 +244,14 @@
         <div class="col-span-7 p-3 flex-col flex items-center min-h-0">
           <!-- recent -->
           <div
-            class="container flex justify-between bg-blue-50 rounded-md h-auto py-8 text-6xl px-5 m-4"
+            class="container flex justify-between bg-blue-50 rounded-md h-auto py-8 text-4xl px-5 m-4"
           >
             <p>Query near Location</p>
             <!-- sort -->
             <button
               id="dropdownDefault"
               data-dropdown-toggle="dropdown"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              class="text-white bg-orange-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               type="button"
             >
               Dropdown button
