@@ -43,4 +43,4 @@ Comment.belongsTo(Review, {
     foreignKey: 'review_id',
 });
 
-module.exports = { Comment, Review, User , Location};
+module.exports = { Comment, Review, User , Location };

@@ -150,13 +150,13 @@
                 <!-- review title -->
                 <div class="container bg-orange-100 bg-opacity-5 text-center rounded-md 0 h-auto p-2 text-2xl text-center"
                 >
-                  <p>{{review.review_title}}</p>
+                  <p><b>{{review.review_title}}</b></p>
                 </div>
                 <!-- location -->
                 <div
                   class="container bg-orange-100 bg-opacity-5 text-center rounded-md 0 h-auto p-2 text-2xl text-center"
                 >
-                  <p>{{review.location_id.location_name}}</p>
+                  <p>{{location.location_name}}</p>
                 </div>
 
                 <!-- user and rating -->
@@ -172,8 +172,8 @@
                       alt=""
                     />
                     <div class="text-lg mx-2">
-                      <p>Username</p>
-                      <p>01/02/03</p>
+                      <p>{{user.name}}</p>
+                      <p>{{format_date review.date_created}}</p>
                     </div>
 
                     <!-- rating -->
@@ -183,6 +183,7 @@
                     >
                       <!-- star -->
                       <div class="text-4xl ml-6">
+                        <p>{{review.review_rating}}</p>
                         <p>✪✪✪✪✪</p>
                       </div>
                     </div>

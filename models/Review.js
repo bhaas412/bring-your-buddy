@@ -19,6 +19,10 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    review_rating: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -30,6 +34,7 @@ Review.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
