@@ -1,66 +1,82 @@
 const router = require('express').Router();
-const { Review, User } = require('../models');
+const { Review, User , Location, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const userData = await User.findOne({
-      where: {
-        id: req.session.user_id
-    },
-    attributes: { exclude: ['password']},
-    include: [
-        {
-            model: Review,
-            attributes: [
-                'id',
-                'review_title',
-                'review_text',
-                'date_created',
-                'pet_type',
-            ],
-            include: [
-                {
-                    model: User,
-                    attributes: ['name']
-                },
-                {
-                    model: Comment,
-                    attributes: [
-                        'id',
-                        'comment_text',
-                        'post_id',
-                        'user_id',
-                        'created_at',
-                    ],
-                    include: {
-                        model: User,
-                        attributes: ['name']
-                    }
-                }
-            ]
-        },
-        {
-            model: Location,
-            attributes: [
-                'id',
-                'location_name',
-                'location_type',
-                'location_address',
-                'pet_type',
-            ],
-        }
-    ]
-    })
+    const reviewData = await Review.findAll();
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
 
-    let userInfo = userData.get({ plain: true });
-    res.render('homepage', { userInfo, loggedIn: true });
+    const locationData = 
+
+    res.render('homepage', { reviews })
   }
   catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-});
+})
+
+// router.get('/', async (req, res) => {
+//   try {
+//     const userData = await User.findOne({
+//       where: {
+//         id: req.session.user_id
+//     },
+//     attributes: { exclude: ['password']},
+//     include: [
+//         {
+//             model: Review,
+//             attributes: [
+//                 'id',
+//                 'review_title',
+//                 'review_text',
+//                 'date_created',
+//                 'pet_type',
+//             ],
+//             include: [
+//                 {
+//                     model: User,
+//                     attributes: ['name']
+//                 },
+//                 {
+//                   model: Location,
+//                   attributes: [
+//                       'id',
+//                       'location_name',
+//                       'location_type',
+//                       'location_address',
+//                       'pet_type',
+//                   ],
+//                 },                
+//                 {
+//                   model: Comment,
+//                   attributes: [
+//                       'id',
+//                       'comment_text',
+//                       'post_id',
+//                       'user_id',
+//                       'created_at',
+//                   ],
+//                   include: {
+//                       model: User,
+//                       attributes: ['name']
+//                   }
+//                 }
+//             ]
+//         },
+        
+//     ]
+//     })
+
+//     let userInfo = userData.get({ plain: true });
+//     res.render('homepage', { userInfo });
+//   }
+//   catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
