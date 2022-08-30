@@ -30,8 +30,9 @@
 // router.post('/', withAuth, (req, res) => {
 //     Location.create({
 //         location_name: req.body.location_name,
-//         location: req.body.location,
-//         user_id: req.session.user_id
+//         location_type: req.body.location_type,
+//         location_address: req.body.location_address,
+//         pet_type: req.body.pet_type
 //     })
 //     .then(data => res.json(data))
 //     .catch(err => {
