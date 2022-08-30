@@ -5,12 +5,12 @@ async function deleteFormHandler(event) {
         window.location.toString().split('/').length - 1
     ];
 
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/reviews/${id}`, {
         method: 'DELETE'
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/');
     }
     else {
         alert(response.statusText);

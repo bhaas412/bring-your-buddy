@@ -35,7 +35,11 @@ User.init(
         len: [8],
       },
     },
-    pet: {
+    pet_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    pet_type: {
       type: DataTypes.STRING,
       allowNull: true,
     }
@@ -52,7 +56,6 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',

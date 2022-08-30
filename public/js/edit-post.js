@@ -1,8 +1,11 @@
 async function editFormHandler(event) {
     event.preventDefault();
     
-    const title = document.querySelector('input[name="post-title"]').value.trim();
-    const post_body = document.querySelector('input[name="post-body"]').value.trim();
+    // Get review information elements
+    const review_title = document.querySelector('input[name="post-title"]').value.trim();
+    const review_text = document.querySelector('input[name="post-body"]').value.trim();
+    const review_rating = '';
+    const pet_type = '';
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
@@ -10,14 +13,17 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            title,
-            post_body
+            review_title,
+            review_text,
+            review_rating,
+            pet_type,
+            id
         }),
         headers: {'Content-Type': 'application/json'}
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/');
     }
     else {
         alert(response.statusText);

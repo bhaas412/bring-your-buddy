@@ -1,9 +1,12 @@
 {
-  "name": "bring-my-buddy",
+  "name": "bring-your-buddy",
   "version": "1.0.0",
   "description": "",
-  "main": "tailwind.config.js",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
     "dev": "vite"
   },
   "repository": {
@@ -18,12 +21,21 @@
   },
   "homepage": "https://github.com/bhaas412/bring-my-buddy#readme",
   "devDependencies": {
+
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
     "vite": "^3.0.9"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
     "flowbite": "^1.5.2"
   }
 }

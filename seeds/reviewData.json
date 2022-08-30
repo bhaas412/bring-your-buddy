@@ -1,5 +1,20 @@
 [
   {
-
+    "review_title": "Great Experience",
+    "review_text": "This place is awesome!",
+    "review_rating": "5",
+    "pet_type": "Dog"
+  },
+  {
+    "review_title": "Horrible Experience",
+    "review_text": "This place sucks!",
+    "review_rating": "1",
+    "pet_type": "Dog"
+  },
+  {
+    "review_title": "Meh",
+    "review_text": "This place is alright.",
+    "review_rating": "3",
+    "pet_type": "Dog"
   }
 ]

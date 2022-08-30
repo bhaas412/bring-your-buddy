@@ -1,9 +1,9 @@
 async function commentFormHandler(event) {
     event.preventDefault();
 
+    // Get comment information elements (user_id is obtained from session and sent to DB on the backend)
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-    
-    const post_id = window.location.toString().split('/')[
+    const review_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
@@ -11,8 +11,8 @@ async function commentFormHandler(event) {
         const response = await fetch('/api/comments', {
             method: 'post',
             body: JSON.stringify({
-                post_id,
-                comment_text
+                comment_text,
+                review_id
             }),
             headers: {'Content-Type': 'application/json'}
         });

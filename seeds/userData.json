@@ -3,24 +3,28 @@
     "name": "Brandon",
     "email": "brandon@gmail.com",
     "password": "password12345",
-    "pet": ""
+    "pet_name": "Nelson Jr.",
+    "pet_type": "Dog"
   },
   {
     "name": "Jaquel",
     "email": "jaquel@gmail.com",
     "password": "password12345",
-    "pet": ""
+    "pet_name": "",
+    "pet_type": ""
   },
   {
     "name": "Kayla",
     "email": "kayla@gmail.com",
     "password": "password12345",
-    "pet": ""
+    "pet_name": "",
+    "pet_type": ""
   },
   {
     "name": "Sophie",
     "email": "sophie@gmail.com",
     "password": "password12345",
-    "pet": ""
+    "pet_name": "",
+    "pet_type": ""
   }
 ]

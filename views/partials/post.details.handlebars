@@ -1,12 +1,12 @@
 <article class="post-wrapper">
     <div class="post-title">
-        <a href="/post/{{id}}"><h5>{{title}}</h5></a>
+        <a href="/post/{{id}}"><h5>{{review_title}}</h5></a>
         <blockquote class="small">
-            <p>{{post_body}}</p>
+            <p>{{review_text}}</p>
         </blockquote>
     </div>
     <div class="post-userinfo grid col 12">
-        {{user.username}} on {{format_date created_at}}
+        {{user.name}} on {{format_date created_at}}
         |
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
