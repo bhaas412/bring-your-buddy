@@ -1,10 +1,10 @@
-// const router = require('express').Router();
-// const { Location } = require('../../models');
-// const fetch = require('node-fetch');
+const router = require('express').Router();
+const { Location } = require('../../models');
+const fetch = require('node-fetch');
 
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
-// require('dotenv').config();
+require('dotenv').config();
 
 // // TODO: Stretch goal - third-party API
 
@@ -26,20 +26,20 @@
 //         });
 // });
 
-// // create reviews
-// router.post('/', withAuth, (req, res) => {
-//     Location.create({
-//         location_name: req.body.location_name,
-//         location_type: req.body.location_type,
-//         location_address: req.body.location_address,
-//         pet_type: req.body.pet_type
-//     })
-//     .then(data => res.json(data))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
+// create reviews
+router.post('/', withAuth, (req, res) => {
+    Location.create({
+        location_name: req.body.location_name,
+        location_type: req.body.location_type,
+        location_address: req.body.location_address,
+        pet_type: req.body.pet_type
+    })
+    .then(data => res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 
-// module.exports = router;
+module.exports = router;

@@ -1,13 +1,13 @@
 [
     {
         "location_name": "Home Depot",
-        "location_type": "Store",
+        "location_type": "Shop",
         "location_address": "1932 Norwich-New London Turnpike, Uncasville, CT 06382",
         "pet_type": "Any"
     },
     {
         "location_name": "Petco",
-        "location_type": "Store",
+        "location_type": "Shop",
         "location_address": "825 Hartford Turnpike, Waterford, CT 06385",
         "pet_type": "Any"
     },
