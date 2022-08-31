@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-    purge: [
-      './html/**.{html,js}'
+    content: [
+      './views/**.{handlebars, html, js}'
     ],
   theme: {
     colors: {
