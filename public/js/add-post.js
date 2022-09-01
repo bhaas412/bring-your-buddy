@@ -4,6 +4,22 @@ async function newFormHandler(event) {
     // Get review information elements
     const review_title = document.querySelector('input[name="post-title"]').value;
     const review_text = document.querySelector('input[name="post-body"]').value;
+    
+
+    function displayRadioValue() {
+        let ele = document.getElementsByTagName('input');
+        let results = []
+          
+        for(i = 0; i < ele.length; i++) {
+              
+            if(ele[i].type="radio") {
+              
+                if(ele[i].checked)
+                ele[i].value = results
+            }
+        }
+    }
+
     const review_rating = '';
     const pet_type = '';
 

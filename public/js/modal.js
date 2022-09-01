@@ -14,8 +14,6 @@ let signupxbutton = document.getElementById("signup-x-btn");
 
 
 
-
-
 //modal open buttons
 loginModalbtn.addEventListener('click', function() {
     loginmodal.style.display = "block";
