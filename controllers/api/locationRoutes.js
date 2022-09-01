@@ -6,8 +6,15 @@ const withAuth = require('../../utils/auth');
 
 require('dotenv').config();
 
-// TODO:
 // Get all locations
+router.get('/', (req, res) => {
+    Locations.findAll({})
+    .then(data => res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // Get a location
 

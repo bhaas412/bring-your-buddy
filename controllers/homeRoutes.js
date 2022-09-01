@@ -14,8 +14,24 @@ router.get('/', async (req, res) => {
         },
         {
           model: Location,
-          attributes: ['location_name']
-        }
+          attributes: [
+            'location_name',
+          ]
+        },
+        {
+          model: Comment,
+          attributes: [
+              'id',
+              'comment_text',
+              'review_id',
+              'user_id',
+              'created_at'
+          ],
+          include: {
+              model: User,
+              attributes: ['name']
+          }
+      }
       ]
     });
 
@@ -30,12 +46,98 @@ router.get('/', async (req, res) => {
   }
 })
 
+// Get all 
+// TODO: Get all reviews for the searched location name, render review data to search.homepage
+router.get('/searchLocation', async (req, res) => {
+  try {
+    const reviewData = await Review.findAll({
+      where: {
+        location_name: req.body.location_name
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Location,
+          attributes: [
+            'location_name',
+            'id']
+        },
+        {
+          model: Comment,
+          attributes: [
+              'id',
+              'comment_text',
+              'review_id',
+              'user_id',
+              'created_at'
+          ],
+          include: {
+              model: User,
+              attributes: ['name']
+          }
+        }
+      ]
+      });
 
-// TODO: Get all reviews for the searched location, render review data to search.homepage
-router.get('/search', (req, res) => {})
+      const reviews = reviewData.map((review) => review.get({ plain: true }));
 
-// TODO: Get all reviews for location (click on location)
-router.get('/location/:id', (req, res) => {})
+    // Pass reviews
+    res.render('search', { reviews })
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+// TODO: Get all reviews for location id (client clicking on location sends GET request to this URL)
+router.get('/locations/:id', async (req, res) => {
+  try {
+    const reviewData = await Review.findAll({
+      where: {
+        location_id: req.params.id
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Location,
+          attributes: [
+            'location_name',
+            'id']
+        },
+        {
+          model: Comment,
+          attributes: [
+              'id',
+              'comment_text',
+              'review_id',
+              'user_id',
+              'created_at'
+          ],
+          include: {
+              model: User,
+              attributes: ['name']
+          }
+        }
+      ]
+      });
+
+      const reviews = reviewData.map((review) => review.get({ plain: true }));
+
+    // Pass reviews
+    res.render('search', { reviews })
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
