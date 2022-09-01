@@ -1,29 +1,43 @@
 // login logout modal
-let modal = document.getElementById("login-modal");
+let loginmodal = document.getElementById("login-modal");
+let signupmodal = document.getElementById("login-modal");
 
 let loginModalbtn = document.getElementById("loginbtn");
 let signupModalbtn = document.getElementById("signupbtn");
+
 let mobileLoginbtn = document.getElementById("mloginbtn");
 let moblileSignupbtn = document.getElementById("msignupbtn");
 
-let xbutton = document.getElementById("x-btn");
-
-const openModal = function() {
-    modal.style.display = "block";
-}
-
-const closeModal = function() {
-    modal.style.display = "none";
-};
+let loginxbutton = document.getElementById("login-x-btn");
+let signupxbutton = document.getElementById("signup-x-btn");
 
 
-//modal with login
-loginModalbtn.addEventListener('click',openModal)
-signupModalbtn.addEventListener('click',openModal)
 
-//modal with signup
-mobileLoginbtn.addEventListener('click', openModal)
-mobileSignupbtn.addEventListener('click', openModal)
 
-xbutton.addEventListener('click', closeModal)
 
+
+//modal open buttons
+loginModalbtn.addEventListener('click', function() {
+    loginmodal.style.display = "block";
+})
+signupModalbtn.addEventListener('click', function() {
+    signupmodal.style.display = "block";
+})
+
+// mobile open buttons
+mobileLoginbtn.addEventListener('click', function() {
+    loginmodal.style.display = "block";
+})
+moblileSignupbtn.addEventListener('click', function() {
+    signupmodal.style.display = "block";
+})
+
+
+
+//modal close buttons
+loginxbutton.addEventListener('click', function() {
+    loginmodal.style.display = "none";
+})
+signupxbutton.addEventListener('click', function() {
+    signupmodal.style.display = "none";
+})
