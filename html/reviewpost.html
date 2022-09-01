@@ -1,4 +1,4 @@
-<div class="sm:grid sm:grid-cols-3 sm:h-72 mb-2 p-2  bg-white bg-opacity-25">
+<section  class="review-post-wrapper sm:grid sm:grid-cols-3 sm:h-72 mb-2 p-2  bg-white bg-opacity-25">
     <!-- post -->
     <div class="flex flex-col col-span-2 sm:mr-2 min-h-0">
       <!-- user and stats -->
@@ -11,13 +11,13 @@
           <!--pfp,  username, date + time -->
           <div class="flex sm:mr-2 mb-1 items-center text-lg">
             <!-- pfp -->
-            <img class="w-12 h-12 mr-2 rounded-lg"
+            <img class="post-profile-picture w-12 h-12 mr-2 rounded-lg"
               src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-              alt="" />
+              alt="pfp" />
             <!--username, post item stats -->
             <div>
-              <p>Username</p>
-              <span class="text-sm">01/02/03</span><span class="text-sm">
+              <p class="post-username">Username</p>
+              <span class="post-date text-sm">01/02/03</span><span class="comment-time text-sm">
                 12:34 PM</span>
             </div>
           </div>
@@ -27,11 +27,11 @@
           <div class="sm:pl-2  flex flex-col sm:flex-row justify-between grow ">
             <!-- location -->
             <div class="ml-auto h-auto py-2 text-2xl text-center underline">
-              <p>Somewhere, Someplace</p>
+              <p class="post-location">Somewhere, Someplace</p>
             </div>
             <!-- star -->
             <div class="text-4xl pb-1 px-2 mx-auto rounded-full bg-byb-orange-light">
-              <p>✪✪✪✪✪</p>
+              <p class="post-rating">✪✪✪✪✪</p>
             </div>
           </div>
 
@@ -41,7 +41,7 @@
       <!-- post text -->
       <div
         class="mt-2 sm:mb-0 mb-2 p-6 bg-clip-box bg-white rounded-md sm:h-full h-48 overflow-y-auto sm:overscroll-auto">
-        <p>
+        <p class="post-body">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Voluptates possimus magni facere ab veniam eaque natus
           officiis deserunt adipisci est. Corrupti perspiciatis dolorem
@@ -51,25 +51,23 @@
           officiis deserunt adipisci est. Corrupti perspiciatis dolorem
           accusantium laudantium?
         </p>
-        <!-- post link -->
-        <a class="text-blue-500 underline" href="https://www.w3schools.com">Continue reading........</a>
       </div>
     </div>
     <!-- post comments that scroll inside the div-->
-    <div class="flex flex-col max-h-72 min-h-0 basis-0 flex-1 col-span-1 ">
+    <section class="post-comment-section flex flex-col max-h-72 min-h-0 basis-0 flex-1 col-span-1 ">
       <!-- comment button -->
 
       <button type="button"
-        class="h-fit p-1 mx-3 mb-2 rounded-md text-xl self-center w-full bg-opacity-75 bg-byb-orange shadow-md">
+        class="post-comment-button h-fit p-1 mx-3 mb-2 rounded-md text-xl self-center w-full bg-opacity-75 bg-byb-orange shadow-md">
         Comment on this post
       </button>
 
       <!--post comments section -->
 
-      <div class="flex flex-col sm:h-72 items-center overflow-y-auto sm:overscroll-contain opacity-90">
+      <section class="post-comment-section flex flex-col sm:h-72 items-center overflow-y-auto sm:overscroll-contain opacity-90">
 
         <!-- comment card goes here -->
 
-      </div>
+      </section>
     </div>
-  </div>
+  </section>
