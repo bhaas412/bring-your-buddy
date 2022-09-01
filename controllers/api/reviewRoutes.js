@@ -5,30 +5,14 @@ const withAuth = require('../../utils/auth');
 
 // Get all reviews
 router.get('/', async (req, res) => {
-    try {
-      const reviewData = await Review.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-          {
-            model: Location,
-            attributes: ['location_name']
-          }
-        ]
-      });
-  
-      const reviews = reviewData.map((review) => review.get({ plain: true }));
-  
-      // Pass reviews
-      res.render('homepage', { reviews })
-    }
-    catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  })
+    Review.findAll({})
+    .then(data => res.json(data))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 // router.get('/', (req, res) => {
 //     Review.findAll({
 //         attributes: [

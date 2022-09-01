@@ -6,11 +6,13 @@ const Location = require('./Location');
 // User associations
 
 User.hasMany(Review, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 // Review associations
@@ -24,13 +26,15 @@ Review.belongsTo(Location, {
 });
 
 Review.hasMany(Comment, {
-    foreignKey: 'review_id'
+    foreignKey: 'review_id',
+    onDelete: 'CASCADE'
 });
 
 // Location associations
 
 Location.hasMany(Review, {
-    foreignKey: 'location_id'
+    foreignKey: 'location_id',
+    onDelete: 'CASCADE'
 });
 
 // Comment associations
@@ -40,7 +44,7 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Review, {
-    foreignKey: 'review_id',
+    foreignKey: 'review_id'
 });
 
 module.exports = { Comment, Review, User , Location };

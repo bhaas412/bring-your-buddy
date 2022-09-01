@@ -6,6 +6,15 @@ const withAuth = require('../../utils/auth');
 
 require('dotenv').config();
 
+// TODO:
+// Get all locations
+
+// Get a location
+
+// Add a location
+
+// Delete a location
+
 // // TODO: Stretch goal - third-party API
 
 // // retrieve all locations from the api
@@ -26,7 +35,36 @@ require('dotenv').config();
 //         });
 // });
 
-// create reviews
+
+
+// // Get all locations
+// router.get('/', async (req, res) => {
+//     try {
+//       const reviewData = await Location.findAll({
+//         include: [
+//           {
+//             model: User,
+//             attributes: ['name'],
+//           },
+//           {
+//             model: Location,
+//             attributes: ['location_name']
+//           }
+//         ]
+//       });
+  
+//       const reviews = reviewData.map((review) => review.get({ plain: true }));
+  
+//       // Pass reviews
+//       res.render('homepage', { reviews })
+//     }
+//     catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   })
+
+// Add a location
 router.post('/', withAuth, (req, res) => {
     Location.create({
         location_name: req.body.location_name,
@@ -40,6 +78,5 @@ router.post('/', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
-
 
 module.exports = router;
