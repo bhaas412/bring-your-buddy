@@ -1,10 +1,10 @@
 <!--Overlay Effect-->
-<div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="comment-modal">
+<div class="fixed  inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="comment-modal">
   <!--modal content-->
   <section
     class="relative text-center top-20 mx-3 mb-auto sm:mx-auto p-5 border w-auto sm:w-96 shadow-lg h-1/2 rounded-md bg-white">
     <!-- x button -->
-    <button id="x-btn" type="button"
+    <button id="comment-x-btn" type="button"
       class="absolute top-0 right-0 box-content w-4 h-4 pt-2 px-4 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"><svg
         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
         stroke="currentColor" class="w-6 h-6">
@@ -13,7 +13,7 @@
       </svg>
     </button>
     <!-- form -->
-    <form method="get"
+    <form method="get" id="comment-form" onsubmit="commentFormHandler()"
       class="px-6 mt-10 mb-3 w-full text-gray-800 max-h-32 flex flex-col items-center justify-center lg:justify-start">
       <!-- textarea -->
       <div class="flex flex-col justify-start mb-3 xl:w-96 max-h-fit">

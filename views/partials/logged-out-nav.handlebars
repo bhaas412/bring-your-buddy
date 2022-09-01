@@ -1,0 +1,123 @@
+    <!-- nav -->
+    <nav class="bg-olive max-w-screen shadow-xl flex justify-between  items-center px-2 py-2.5  w-full z-20 h-28">
+
+        <!-- logo and title -->
+        <a href="/home.html" class="flex ml-2 w-auto whitespace-nowrap">
+          <img
+            src="https://lh3.googleusercontent.com/uhl-Jbgc9kvzG0RlBedFCMhnAfyc_8ydsViUO5qf3gxMMdKlAzz61t7Hb2Gob_9nkPFmucO33C4VzCt-kNhbfDTWMUD8IbdJMFAIjFwNGxKcnrZ7s7q7JuAOPxYMHNq2J5w3fkkvxj8=w2400"
+            class="object-fill h-20 w-30" alt="Logo">
+  
+          <span
+            class="md:inline hidden font-oswald lg:text-4xl md:text-3xl md:ml-3  ml-2 self-center mb-1 text-white font-semibold ">Bring
+            Your Buddy</span><span
+            class="md:hidden font-oswald text-2xl sm:text-3xl ml-2 self-center text-white font-semibold">Bring
+            Your Buddy</span>
+        </a>
+  
+  
+        <!-- dropdown and search plus login buttons wrapper -->
+        <div class="hidden md:inline-flex ">
+          <!-- dropdown -->
+          <div class="inline-flex  w-full h-full">
+            <div class="inline-block relative w-fit">
+              <select id="typeselect"
+                class="block appearance-none w-auto bg-white border h-full border-gray-300 hover:border-gray-500 px-4 py-2 pr-6 rounded-l-lg shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option selected>Type..</option>
+                <option value="park">Parks</option>
+                <option value="hotel">Hotels</option>
+                <option value="restaurant">Restaurants</option>
+                <option value="shop">Shops</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+  
+            <!-- searchbar -->
+            <input type="search" id="searchbar"
+              class="block p-2.5 md:w-32 lg:w-48 z-20 text-gray-900 bg-gray-50  border-l-gray-50 border-l-2 border border-gray-300 focus:ring-2 focus:ring-inset focus:outline-none"
+              placeholder="Location..." required="">
+  
+            <!-- search button -->
+            <button onclick="runsearch()" id="searchbtn"
+              class="text-sm font-medium text-white bg-byb-orange-light rounded-r-lg px-2 border border-byb-orange hover:bg-byb-orange">
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </button>
+          </div>
+  
+        </div>
+  
+  
+  
+        <!-- buttons -->
+  
+        <div class=" hidden md:inline-flex h-12  text-sm md:text-base  text-white self-center justify-end">
+          <button id="recentbtn" type="button"
+            class="hidden lg:block px-2.5 py-2 mr-2  bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            <a href="#blog">Reviews</a>
+          </button>
+          <button id="postbtn" type="button"
+            class="hidden lg:block px-2.5 py-2 mr-2  bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            <a href="#blog">Post</a>
+          </button>
+          <button id="loginbtn" type="button"
+            class="px-2.5 py-2 bg-byb-orange-light bg-opacity-50 rounded-l-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            Login
+          </button>
+          <button id="signupbtn" type="button"
+            class="px-2.5 py-2 whitespace-nowrap bg-byb-orange-light rounded-r-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            Sign Up
+          </button>
+        </div>
+  
+        <!-- mobile menu -->
+  
+        <div class="flex md:hidden mr-3">
+          <!-- search button -->
+          <a href="#" id="searchbtn"
+            class="font-medium text-white bg-byb-orange-light rounded-l px-3 py-2 border border-byb-orange hover:bg-byb-orange">
+            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </a>
+          <button id="mobilebtn"
+            class="flex items-center px-3 py-2 border-2 rounded-r bg-byb-orange-light text-byb-orange border-byb-orange hover:text-white hover:border-white">
+            <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+          <div id="mobilemenu"
+            class="hidden flex flex-col absolute mt-16 right-0 backdrop-blur-sm w-1/3 border-l border-b border-byb-orange pl-4 py-4 pr-2 text-white">
+  
+            <button id="msignupbtn" type="button"
+              class="px-2.5 py-2 mb-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+              Sign Up
+            </button>
+  
+            <button id="mloginbtn" type="button"
+              class="px-2.5 py-2 mb-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+              Login
+            </button>
+  
+            <button id="mpostbtn" type="button"
+              class="px-2.5 py-2 mb-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+              Post
+            </button>
+  
+            <button id="mrecent" type="button"
+              class="px-2.5 py-2 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+              <a href="#blog">Reviews</a>
+            </button>
+          </div>
+        </div>
+  
+      </nav>
