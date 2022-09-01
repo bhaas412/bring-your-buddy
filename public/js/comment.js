@@ -2,7 +2,7 @@ async function commentFormHandler(event) {
     event.preventDefault();
 
     // Get comment information elements (user_id is obtained from session and sent to DB on the backend)
-    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
+    const comment_text = document.querySelector('textarea[name="form-comment-body"]').value.trim();
     const review_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];

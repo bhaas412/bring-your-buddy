@@ -1,478 +1,279 @@
-  
-  <div class=" absolute inset-0 flex flex-col min-h-0 min-w-0 ">
-    <!-- nav -->
-    <nav
-      class="bg-olive max-w-screen shadow-xl flex justify-between  items-center px-2 py-2.5  w-full z-20 h-28">
+<div class=" absolute inset-0 flex flex-col min-h-0 min-w-0 ">
+  <!-- nav -->
+  {{#if logged_in}}
+  {{>logged-in-nav}}
+  {{else}}
+  {{>logged-out-nav}}
+  {{/if}}
 
-      <!-- logo and title -->
-          <a href="/" class="flex mx-3">
-            <img
-              src="./images/BYB Logo no text.png"
-              class="object-fill h-20 w-30 p-0"
-              alt="Logo">
-        <span
-          class="md:inline hidden font-oswald lg:text-4xl md:text-3xl md:ml-3  ml-2 self-center mb-1 text-white font-semibold ">Bring
-          Your Buddy</span><span class="md:hidden font-oswald text-2xl sm:text-3xl ml-2 self-center text-white font-semibold">Bring
-          Your Buddy</span>
-      </a>
-
-
-      <!-- dropdown and search plus login buttons wrapper -->
-      <div class="hidden md:inline-flex ">
-        <!-- dropdown -->
-        <div class="inline-flex  w-full h-full">
-          <div class="inline-block relative w-fit">
-            <select id="typeselect"
-              class="block appearance-none w-auto bg-white border h-full border-gray-300 hover:border-gray-500 px-4 py-2 pr-6 rounded-l-lg shadow leading-tight focus:outline-none focus:shadow-outline">
-              <option selected>Type..</option>
-              <option value="park">Parks</option>
-              <option value="hotel">Hotels</option>
-              <option value="restaurant">Restaurants</option>
-              <option value="shop">Shops</option>
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- searchbar -->
-          <input type="search" id="searchbar"
-            class="block p-2.5 md:w-32 lg:w-48 z-20 text-gray-900 bg-gray-50  border-l-gray-50 border-l-2 border border-gray-300 focus:ring-2 focus:ring-inset focus:outline-none"
-            placeholder="Location..." required="">
-
-          <!-- search button -->
-          <button onclick="runsearch()" id="searchbtn"
-            class="text-sm font-medium text-white bg-byb-orange-light rounded-r-lg px-2 border border-byb-orange hover:bg-byb-orange">
-            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-          </button>
-        </div>
-
-       </div>
-       
-       
-       
-       <!-- buttons -->
-
-        <div class=" hidden md:inline-flex h-12  text-sm md:text-base  text-white self-center justify-end">
-          <button type="button"
-            class="hidden lg:block px-2.5 py-2 mr-2  bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
-            <a href="#blog">Reviews</a>
-          </button>
-          <button type="button"
-            class="px-2.5 py-2 bg-byb-orange-light bg-opacity-50 rounded-l-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
-            Login
-          </button>
-          <button type="button"
-            class="px-2.5 py-2 whitespace-nowrap bg-byb-orange-light rounded-r-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
-            Sign Up
-          </button>
-        </div>
-
-        <!-- mobile menu -->
-
-       <div class ="flex md:hidden mr-3">
-        <!-- search button -->
-        <a href="search"
-        class="font-medium text-white bg-byb-orange-light rounded-l px-3 py-2 border border-byb-orange hover:bg-byb-orange">
-        <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-      </a>
-        <button id="mobilebtn" class="flex items-center px-3 py-2 border-2 rounded-r bg-byb-orange-light text-byb-orange border-byb-orange hover:text-white hover:border-white">
-          <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
-        <div id="mobilemenu" class="hidden flex flex-col absolute mt-16 right-0 backdrop-blur-sm w-1/3 border-l border-b border-byb-orange pl-4 py-4 pr-2 text-white">
-          
-        
-          <button type="button"
-            class="px-2.5 py-2 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
-            Sign Up
-          </button>
-
-          <button type="button"
-            class="px-2.5 py-2 my-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
-            Login
-          </button>
-
-          <button type="button"
-            class="px-2.5 py-2 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
-            <a href="#blog">Reviews</a>
-          </button>
-        </div>
-      </div>
-      
-    </nav>
-
-    <!-- main -->
-    <div class="flex-grow flex-col flex w-full h-full shadow-md">
-      <div style="
+  <!-- main -->
+  <div class="flex-grow flex-col flex w-full h-full shadow-md">
+    <div style="
             background-image: url('https://images.pexels.com/photos/11671289/pexels-photo-11671289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
           " class="bg-cover bg-fixed bg-center h-screen w-full px-3 flex flex-col md:items-baseline">
 
-        <!-- textbox -->
+
+      {{!-- all the modals --}}
+      {{!-- <!--signup--> --}}
+      <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="signup-modal">
+        <!--modal content-->
 
         <div
-          class="flex flex-col lg:w-1/2 mt-10 bg-clip-box p-4 backdrop-blur-lg text-center sm:text-left rounded-md lg:mt-auto lg:mb-32">
-          <p
-            class="text-3xl lg:text-4xl  mb-4  text-white font-oswald  tracking-tight subpixel-antialiased underline underline-offset-4">
-            Bring Your Buddy gets tails wagging all over
-            the
-            globe!
-          </p><br>
-          <p class="text-xl lg:text-2xl text-white font-open-sans">We're a social pet lover's blog & review site that helps you and your best friend sniff out new locations! Browse our user reviews on locations such as restaurants, hotels, parks and shops. <br><span class="font-bold"> Join our community, and find your next pet-stination today! </span></p>
-
-        </div>
-
-        <!-- jump down -->
-        <a class="lg:hidden self-center mb-auto mt-auto lg:mt-auto backdrop-blur-md rounded-full drop-shadow animate-bounce content-center"
-          href="#blog"><svg class="m-2 w-10 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke-width="1.5" stroke="white" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
-          </svg></a>
-
-
-
-      </div>
-    </div>
-
-
-    <!-- recent -->
-    <container class="bg-olive bg-opacity-60">
-      <div id="blog" class=" font-mon ml-6 mr-6 rounded-md h-auto p-2 text-3xl text-center mb-2">
-        <p>Recent Posts</p>
-
-      </div>
-
-      <!--post with comments attached -->
-
-
-      <div class="sm:grid sm:grid-cols-3 sm:h-72 mb-2 p-2  bg-white bg-opacity-25">
-        <!-- post -->
-        <div class="flex flex-col col-span-2 sm:mr-2 min-h-0">
-          <!-- user and stats -->
-          <div class="flex h-fit justify-between bg-white rounded-md bg-opacity-75 text-2xl p-2">
-
-            <!-- user and post stats -->
-
-            <div class="flex sm:flex-row flex-col items-center w-full py-1 px-3 ">
-
-              <!--pfp,  username, date + time -->
-              <div class="flex sm:mr-2 mb-1 items-center text-lg">
-                <!-- pfp -->
-                <img class="w-12 h-12 mr-2 rounded-lg"
-                  src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-                  alt="" />
-                <!--username, post item stats -->
-                <div>
-                  <p>Username</p>
-                  <span class="text-sm">01/02/03</span><span class="text-sm">
-                    12:34 PM</span>
-                </div>
-              </div>
-
-              <!-- rating -->
-
-              <div class="sm:pl-2  flex flex-col sm:flex-row justify-between grow ">
-                <!-- location -->
-                <div class="ml-auto h-auto py-2 text-2xl text-center underline">
-                  <p>Somewhere, Someplace</p>
-                </div>
-                <!-- star -->
-                <div class="text-4xl pb-1 px-2 mx-auto rounded-full bg-byb-orange-light">
-                  <p>✪✪✪✪✪</p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <!-- post text -->
-          <div
-            class="mt-2 sm:mb-0 mb-2 p-6 bg-clip-box bg-white rounded-md sm:h-full h-48 overflow-y-auto sm:overscroll-auto">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptates possimus magni facere ab veniam eaque natus
-              officiis deserunt adipisci est. Corrupti perspiciatis dolorem
-              accusantium laudantium? Nemo saepe iusto quisquam officia!Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit.
-              Voluptates possimus magni facere ab veniam eaque natus
-              officiis deserunt adipisci est. Corrupti perspiciatis dolorem
-              accusantium laudantium?
-            </p>
-            <!-- post link -->
-            <a class="text-blue-500 underline" href="https://www.w3schools.com">Continue reading........</a>
-          </div>
-        </div>
-        <!-- post comments that scroll inside the div-->
-        <div class="flex flex-col max-h-72 min-h-0 basis-0 flex-1 col-span-1 ">
-          <!-- comment button -->
-
-          <button type="button"
-            class="h-fit p-1 mx-3 mb-2 rounded-md text-xl self-center w-full bg-opacity-75 bg-byb-orange shadow-md">
-            Comment on this post
+          class="text-center relative top-20 mx-3 sm:mx-auto p-5 border w-auto sm:w-96 shadow-lg h-3/5  rounded-md bg-white">
+          <!-- x button -->
+          <button id="signup-x-btn" type="button"
+            class="absolute top-0 right-0 box-content w-4 h-4 pt-2 px-4 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </button>
 
-          <!--post comments section -->
+          <section class="px-6 h-full w-full mt-10 mb-auto text-gray-800">
 
-          <div class="flex flex-col sm:h-72 items-center overflow-y-auto sm:overscroll-contain opacity-90">
-            <!--comment card -->
-            <div class="flex flex-col p-2 bg-white bg-opacity-25 rounded-md my-2">
-              <!-- user and post stats -->
-              <div class="flex items-center justify-between mb-2 py-1 px-3 bg-white rounded-md h-auto text-lg">
-                <!-- username and post time -->
-                <div class=" ">
-                  <p>Username</p>
-                </div>
-                <!-- post item stats -->
-                <div class="text-right self-start text-sm">
-                  <p>Posted on: 01/02/03</p>
-                  <p>12:34 PM</p>
-                </div>
-              </div>
-              <!-- comment -->
-              <div class="bg-clip-box p-6 bg-clip-box bg-white rounded-md">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptates possimus magni facere ab veniam eaque natus
-                  officiis deserunt adipisci est. Corrupti perspiciatis
-                  dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                  officia!
-                </p>
-              </div>
-            </div>
-            <!-- end comment card -->
+            <form id="signup-form">
+              <div class="flex flex-col items-center justify-center lg:justify-start">
 
-            <!--comment card -->
-            <div class="flex flex-col p-2 bg-white bg-opacity-25 rounded-md my-2">
-              <!-- user and post stats -->
-              <div class="flex items-center justify-between mb-2 py-1 px-3 bg-white rounded-md h-auto text-lg">
-                <!-- username and post time -->
-                <div class=" ">
-                  <p>Username</p>
+                <!-- Username input -->
+                <div class="mb-6">
+                  <input type="text"
+                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="username-signup" placeholder="Username" required />
                 </div>
-                <!-- post item stats -->
-                <div class="text-right self-start text-sm">
-                  <p>Posted on: 01/02/03</p>
-                  <p>12:34 PM</p>
-                </div>
-              </div>
-              <!-- comment -->
-              <div class="bg-clip-box p-6 bg-clip-box bg-white rounded-md">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptates possimus magni facere ab veniam eaque natus
-                  officiis deserunt adipisci est. Corrupti perspiciatis
-                  dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                  officia!
-                </p>
-              </div>
-            </div>
-            <!-- end comment card -->
-            <!--comment card -->
-            <div class="flex flex-col p-2 bg-white bg-opacity-25 rounded-md my-2">
-              <!-- user and post stats -->
-              <div class="flex items-center justify-between mb-2 py-1 px-3 bg-white rounded-md h-auto text-lg">
-                <!-- username and post time -->
-                <div class=" ">
-                  <p>Username</p>
-                </div>
-                <!-- post item stats -->
-                <div class="text-right self-start text-sm">
-                  <p>Posted on: 01/02/03</p>
-                  <p>12:34 PM</p>
-                </div>
-              </div>
-              <!-- comment -->
-              <div class="bg-clip-box p-6 bg-clip-box bg-white rounded-md">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptates possimus magni facere ab veniam eaque natus
-                  officiis deserunt adipisci est. Corrupti perspiciatis
-                  dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                  officia!
-                </p>
-              </div>
-            </div>
-            <!-- end comment card -->
 
-          </div>
+
+                <!-- Email input -->
+                <div class="mb-6">
+                  <input type="text"
+                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="email-signup" placeholder="Email address" required />
+                </div>
+
+                <!-- Password input -->
+                <div class="mb-6">
+                  <input type="password"
+                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="password-signup" placeholder="Password" required />
+                </div>
+
+                <!-- Password input -->
+                <div class="mb-6">
+                  <input type="password"
+                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="confirm-password-signup" placeholder="Confirm password" required />
+                </div>
+                <div class="text-center mx-3 ">
+                  <input id="signup-submit" type="submit" value="Sign up"
+                    class="px-2.5 py-2 bg-byb-orange-light w-full rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+                  </input>
+                  <p class="text-sm font-semibold mt-2 pt-1 mb-0">Have an account?
+                    <span id="login-link"
+                      class="text-blue-600 cursor-pointer hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Login</span>
+                  </p>
+                </div>
+            </form>
+          </section>
         </div>
       </div>
-
-      <!-- end postbox -->
+      {{!-- login --}}
       
-      <!--post with comments attached -->
+      <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="login-modal">
+        <!--modal content-->
+        <div
+          class="relative top-20 mx-3 sm:mx-auto p-5 border w-auto sm:w-96 shadow-lg h-1/2 text-center rounded-md bg-white">
 
-
-      <div class="sm:grid sm:grid-cols-3 sm:h-72 mb-2 p-2  bg-white bg-opacity-25">
-        <!-- post -->
-        <div class="flex flex-col col-span-2 sm:mr-2 min-h-0">
-          <!-- user and stats -->
-          <div class="flex h-fit justify-between bg-white rounded-md bg-opacity-75 text-2xl p-2">
-
-            <!-- user and post stats -->
-
-            <div class="flex sm:flex-row flex-col items-center w-full py-1 px-3 ">
-
-              <!--pfp,  username, date + time -->
-              <div class="flex sm:mr-2 mb-1 items-center text-lg">
-                <!-- pfp -->
-                <img class="w-12 h-12 mr-2 rounded-lg"
-                  src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-                  alt="" />
-                <!--username, post item stats -->
-                <div>
-                  <p>Username</p>
-                  <span class="text-sm">01/02/03</span><span class="text-sm">
-                    12:34 PM</span>
-                </div>
-              </div>
-
-              <!-- rating -->
-
-              <div class="sm:pl-2  flex flex-col sm:flex-row justify-between grow ">
-                <!-- location -->
-                <div class="ml-auto h-auto py-2 text-2xl text-center underline">
-                  <p>Somewhere, Someplace</p>
-                </div>
-                <!-- star -->
-                <div class="text-4xl pb-1 px-2 mx-auto rounded-full bg-byb-orange-light">
-                  <p>✪✪✪✪✪</p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <!-- post text -->
-          <div
-            class="mt-2 sm:mb-0 mb-2 p-6 bg-clip-box bg-white rounded-md sm:h-full h-48 overflow-y-auto sm:overscroll-auto">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptates possimus magni facere ab veniam eaque natus
-              officiis deserunt adipisci est. Corrupti perspiciatis dolorem
-              accusantium laudantium? Nemo saepe iusto quisquam officia!Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit.
-              Voluptates possimus magni facere ab veniam eaque natus
-              officiis deserunt adipisci est. Corrupti perspiciatis dolorem
-              accusantium laudantium?
-            </p>
-            <!-- post link -->
-            <a class="text-blue-500 underline" href="https://www.w3schools.com">Continue reading........</a>
-          </div>
-        </div>
-        <!-- post comments that scroll inside the div-->
-        <div class="flex flex-col max-h-72 min-h-0 basis-0 flex-1 col-span-1 ">
-          <!-- comment button -->
-
-          <button type="button"
-            class="h-fit p-1 mx-3 mb-2 rounded-md text-xl self-center w-full bg-opacity-75 bg-byb-orange shadow-md">
-            Comment on this post
+          <button id="login-x-btn" type="button"
+            class="absolute top-0 right-0 box-content w-4 h-4 pt-2 px-4 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </button>
 
-          <!--post comments section -->
+          <section class="px-6 h-full w-full mt-10 mb-auto text-gray-800">
+            <!-- form -->
+            <form id="signin-form">
+              <div class="flex flex-col items-center justify-center lg:justify-start">
+                <!-- Email input -->
+                <div class="mb-6">
+                  <input type="text"
+                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="email-signin" placeholder="Email address" required />
+                </div>
 
-          <div class="flex flex-col sm:h-72 items-center overflow-y-auto sm:overscroll-contain opacity-90">
-            <!--comment card -->
-            <div class="flex flex-col p-2 bg-white bg-opacity-25 rounded-md my-2">
-              <!-- user and post stats -->
-              <div class="flex items-center justify-between mb-2 py-1 px-3 bg-white rounded-md h-auto text-lg">
-                <!-- username and post time -->
-                <div class=" ">
-                  <p>Username</p>
+                <!-- Password input -->
+                <div class="mb-6">
+                  <input type="password"
+                    class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="password-signin" placeholder="Password" required />
                 </div>
-                <!-- post item stats -->
-                <div class="text-right self-start text-sm">
-                  <p>Posted on: 01/02/03</p>
-                  <p>12:34 PM</p>
-                </div>
-              </div>
-              <!-- comment -->
-              <div class="bg-clip-box p-6 bg-clip-box bg-white rounded-md">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptates possimus magni facere ab veniam eaque natus
-                  officiis deserunt adipisci est. Corrupti perspiciatis
-                  dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                  officia!
-                </p>
-              </div>
-            </div>
-            <!-- end comment card -->
 
-            <!--comment card -->
-            <div class="flex flex-col p-2 bg-white bg-opacity-25 rounded-md my-2">
-              <!-- user and post stats -->
-              <div class="flex items-center justify-between mb-2 py-1 px-3 bg-white rounded-md h-auto text-lg">
-                <!-- username and post time -->
-                <div class=" ">
-                  <p>Username</p>
-                </div>
-                <!-- post item stats -->
-                <div class="text-right self-start text-sm">
-                  <p>Posted on: 01/02/03</p>
-                  <p>12:34 PM</p>
-                </div>
-              </div>
-              <!-- comment -->
-              <div class="bg-clip-box p-6 bg-clip-box bg-white rounded-md">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptates possimus magni facere ab veniam eaque natus
-                  officiis deserunt adipisci est. Corrupti perspiciatis
-                  dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                  officia!
-                </p>
-              </div>
-            </div>
-            <!-- end comment card -->
-            <!--comment card -->
-            <div class="flex flex-col p-2 bg-white bg-opacity-25 rounded-md my-2">
-              <!-- user and post stats -->
-              <div class="flex items-center justify-between mb-2 py-1 px-3 bg-white rounded-md h-auto text-lg">
-                <!-- username and post time -->
-                <div class=" ">
-                  <p>Username</p>
-                </div>
-                <!-- post item stats -->
-                <div class="text-right self-start text-sm">
-                  <p>Posted on: 01/02/03</p>
-                  <p>12:34 PM</p>
-                </div>
-              </div>
-              <!-- comment -->
-              <div class="bg-clip-box p-6 bg-clip-box bg-white rounded-md">
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Voluptates possimus magni facere ab veniam eaque natus
-                  officiis deserunt adipisci est. Corrupti perspiciatis
-                  dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                  officia!
-                </p>
-              </div>
-            </div>
-            <!-- end comment card -->
 
-          </div>
+                <div class="text-center mx-3 ">
+                  <button id="signup-button" type="button"
+                    class="px-2.5 py-2 bg-byb-orange-light w-full rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+                    Sign Up
+                  </button>
+
+                  <input id="signin-submit" type="submit" value="Login"
+                    class="px-2.5 py-2 my-3 bg-byb-orange-light w-full rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+                  </input>
+                  <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                    Don't have an account?
+                    <span id="signup-link"
+                      class="text-red-600 cursor-pointer hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out">Register</span>
+                  </p>
+                </div>
+            </form>
+          </section>
         </div>
       </div>
+      {{!-- create post --}}
+      
+      <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="post-modal">
+        <!--modal content-->
+        <section
+          class="relative text-center top-20 mx-3 mb-auto sm:mx-auto p-5 border w-auto sm:w-96 shadow-lg h-3/4 rounded-md bg-white">
+          <!-- x button -->
+          <button id="post-x-btn" type="button"
+            class="absolute top-0 right-0 box-content w-4 h-4 pt-2 px-4 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </button>
 
-      <!-- end postbox -->
+          <!-- form -->
+          <form method="get" id="post-form" onsubmit="newFormHandler()"
+            class="px-6 mt-10 mb-3 w-full text-gray-800 max-h-32 flex flex-col items-center justify-center lg:justify-start">
+            <!--form with: location name, address, rating, pet type, post body -->
+            <div class="mb-6">
+              <!-- location name -->
+              <input type="text"
+                class="form-control block w-full  mb-2 px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="location-name" name="location-name" placeholder="Location name" required />
 
+              <!-- address -->
+              <input type="text"
+                class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="location-address" name="location-address" placeholder="Location address" required />
+              <!-- rating, pet type -->
 
-    </container>
+              <div class="flex w-full text-left items-center justify-around my-2">
+                <!-- rating -->
+                <fieldset id="rating">
+                  <legend class="font-bold">My rating:</legend>
+                  <input type="radio" name="rate" value="1" required>
+                  <label for="1">✪</label><br>
+                  <input type="radio" name="rate" value="2">
+                  <label for="2">✪✪</label><br>
+                  <input type="radio" name="rate" value="2">
+                  <label for="3">✪✪✪</label><br>
+                  <input type="radio" name="rate" value="4">
+                  <label for="4">✪✪✪✪</label><br>
+                  <input type="radio" name="rate" value="5">
+                  <label for="5">✪✪✪✪✪</label><br>
+                </fieldset>
+                <!-- pet type -->
+                <fieldset id="pet-type" class="mb-2">
+                  <legend class="font-bold">Pet type:</legend>
+                  <input type="radio" name="pet" value="dog" required>
+                  <label for="dog"> I have a dog</label><br>
+                  <input type="radio" name="pet" value="cat">
+                  <label for="cat"> I have a cat</label><br>
+                </fieldset>
+              </div>
+              <!-- textarea -->
+              <div class="flex flex-col justify-start mb-3 xl:w-96 max-h-fit">
+                <label for="post-body" class="form-label inline-block mb-2 text-gray-700">Leave your
+                  mark!</label>
+                <textarea
+                  class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  id="post-body" name="post-body" placeholder="Your review" required>
+                  </textarea>
+              </div>
+              <!-- post btn -->
+              <input id="post-submit" type="submit" value="Submit post"
+                class="px-2.5 py-2 self-end my-3 bg-byb-orange-light w-full rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+              </input>
+          </form>
+        </section>
+      </div>
+      {{!-- create comment --}}
+      
+      <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="comment-modal">
+        <!--modal content-->
+        <section
+          class="relative text-center top-20 mx-3 mb-auto sm:mx-auto p-5 border w-auto sm:w-96 shadow-lg h-1/2 rounded-md bg-white">
+          <!-- x button -->
+          <button id="comment-x-btn" type="button"
+            class="absolute top-0 right-0 box-content w-4 h-4 pt-2 px-4 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"><svg
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </button>
+          <!-- form -->
+          <form method="get" id="comment-form" onsubmit="commentFormHandler()"
+            class="px-6 mt-10 mb-3 w-full text-gray-800 max-h-32 flex flex-col items-center justify-center lg:justify-start">
+            <!-- textarea -->
+            <div class="flex flex-col justify-start mb-3 xl:w-96 max-h-fit">
+              <label for="form-comment-body" class="form-label inline-block mb-2 text-gray-700">Bark up this
+                tree!</label>
+              <textarea
+                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="form-comment-body" name="form-comment-body" rows="3" placeholder="Your comment" required>
+        </textarea>
+            </div>
+            <!-- post btn -->
+            <input id="comment-submit" type="submit" value="Submit comment"
+              class="px-2.5 py-2 self-end my-3 bg-byb-orange-light w-full rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            </input>
 
+          </form>
+        </section>
+      </div>
+      {{!-- <!-- textbox --> --}}
+      <div
+        class="flex flex-col lg:w-1/2 mt-10 bg-clip-box p-4 backdrop-blur-lg text-center sm:text-left rounded-md lg:mt-auto lg:mb-32">
+        <p
+          class="text-3xl lg:text-4xl  mb-4  text-white font-oswald  tracking-tight subpixel-antialiased underline underline-offset-4">
+          Bring Your Buddy gets tails wagging all over
+          the
+          globe!
+        </p><br>
+        <p class="text-xl lg:text-2xl text-white font-open-sans">We're a social pet lover's blog & review site that
+          helps you and your best friend sniff out new locations! Browse our user reviews on locations such as
+          restaurants, hotels, parks and shops. <br><span class="font-bold"> Join our community, and find your next
+            pet-stination today! </span></p>
+
+      </div>
+
+      {{!-- <!-- jump down --> --}}
+      <a class="lg:hidden self-center mb-auto mt-auto lg:mt-auto backdrop-blur-md rounded-full drop-shadow animate-bounce content-center"
+        href="#blog"><svg class="m-2 w-10 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="1.5" stroke="white" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+        </svg></a>
+
+    </div>
   </div>
-  </div>
-  </div>
-  </div>
-  <script type="text/javascript" src="home.js"></script>
+
+  {{!-- <!-- recent --> --}}
+  <container class="bg-olive bg-opacity-60">
+    <div id="blog" class=" font-mon ml-6 mr-6 rounded-md h-auto p-2 text-3xl text-center mb-2">
+      <p>Recent Posts</p>
+    </div>
+    {{#each reviews as |individual-post|}}
+  </container>
+
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="/js/modal.js"></script>
+<script type="text/javascript" src="/js/home.js"></script>
