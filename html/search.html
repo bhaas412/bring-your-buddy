@@ -10,188 +10,177 @@
 </head>
 
 <body class="aspect-auto font-oswald">
-  <div class="absolute inset-0 bg-gradient-to-t from-blue-300 via-sky-200 flex flex-col min-h-0 min-w-0">
+  <div class="absolute inset-0 bg-gradient-to-t from-olive via-olive-light to-olive-white flex flex-col min-h-0 min-w-0">
     <!-- nav -->
-    <div class=" absolute inset-0 bg-sky-100 flex flex-col min-h-0 min-w-0 ">
-      <!-- nav -->
-      <nav class="bg-lime-800 bg-opacity-60 sha px-2 py-2.5 pv-8 w-full z-20 top-0 left-0 h-32">
-        <div class="container flex items-center justify-between flex-wrap">
-          <!-- logo -->
-          <a href="/home.html" class="flex mx-3">
-            <img
-              src="https://lh3.googleusercontent.com/uhl-Jbgc9kvzG0RlBedFCMhnAfyc_8ydsViUO5qf3gxMMdKlAzz61t7Hb2Gob_9nkPFmucO33C4VzCt-kNhbfDTWMUD8IbdJMFAIjFwNGxKcnrZ7s7q7JuAOPxYMHNq2J5w3fkkvxj8=w2400"
-              class="object-fill h-20 w-30 p-0" alt="Logo">
+    <nav class="bg-olive max-w-screen shadow-xl flex justify-between  items-center px-2 py-2.5  w-full z-20 h-28">
 
-            <span class="font-oswald text-4xl  mt-6 ml-2 text-white font-semibold ">Bring Your Buddy</span>
-          </a>
+      <!-- logo and title -->
+      <a href="/home.html" class="flex ml-2 w-auto whitespace-nowrap">
+        <img
+          src="https://lh3.googleusercontent.com/uhl-Jbgc9kvzG0RlBedFCMhnAfyc_8ydsViUO5qf3gxMMdKlAzz61t7Hb2Gob_9nkPFmucO33C4VzCt-kNhbfDTWMUD8IbdJMFAIjFwNGxKcnrZ7s7q7JuAOPxYMHNq2J5w3fkkvxj8=w2400"
+          class="object-fill h-20 w-30" alt="Logo">
 
-
-
-          <!-- buttons -->
-
-          <div class="absolute pl-20 ml-72 ui-monospace text-xl text-white mt-6 flex">
-            <button type="button" class=" px-5 py-2.5  pr-4 text-center rounded-l-xl">
-              Login
-            </button>
-            <button type="button" class=" px-5 py-2.5 text-center">
-              Sign Up
-            </button>
-            <button type="button" class=" px-5 py-2.5  pr-4 text-center rounded-l-xl">
-              Blog
-            </button>
-          </div>
+        <span
+          class="md:inline hidden font-oswald lg:text-4xl md:text-3xl md:ml-3  ml-2 self-center mb-1 text-white font-semibold ">Bring
+          Your Buddy</span><span
+          class="md:hidden font-oswald text-2xl sm:text-3xl ml-2 self-center text-white font-semibold">Bring
+          Your Buddy</span>
+      </a>
 
 
-          <!-- searches -->
-          <div
-            class="  absolute right-0 items-end py-6 w-full block flex-grow lg:flex lg:items-center lg:w-auto font-sans ">
-
-            <div class="flex">
-
-              <form>
-                <div class="flex mr-6">
-                  <button id="dropdown-button" data-dropdown-toggle="dropdown"
-                    class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-                    type="button">All categories <svg aria-hidden="true" class="ml-1 w-4 h-4" fill="currentColor"
-                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                    </svg></button>
-                  <div id="dropdown"
-                    class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 block"
-                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(4.8px, 72px, 0px);"
-                    data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom">
-                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                      <li>
-                        <button type="button"
-                          class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hotels</button>
-                      </li>
-                      <li>
-                        <button type="button"
-                          class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Restaurants</button>
-                      </li>
-                      <li>
-                        <button type="button"
-                          class="inline-flex py-2 px-4 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Shops</button>
-                      </li>
-
-                    </ul>
-                  </div>
-                  <div class="relative w-full">
-                    <input type="search" id="search-dropdown"
-                      class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                      placeholder="Location..." required="">
-                    <button type="submit"
-                      class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-orange-600 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                      </svg>
-                      <span class="sr-only">Search</span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-
+      <!-- dropdown and search plus login buttons wrapper -->
+      <div class="hidden md:inline-flex ">
+        <!-- dropdown -->
+        <div class="inline-flex  w-full h-full">
+          <div class="inline-block relative w-fit">
+            <select id="typeselect"
+              class="block appearance-none w-auto bg-white border h-full border-byb-orange hover:border-gray-500 px-4 py-2 pr-6 rounded-l-lg shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option selected>Type..</option>
+              <option value="park">Parks</option>
+              <option value="hotel">Hotels</option>
+              <option value="restaurant">Restaurants</option>
+              <option value="shop">Shops</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
             </div>
-
-
-
           </div>
 
+          <!-- searchbar -->
+          <input type="search" id="searchbar"
+            class="block p-2.5 md:w-32 lg:w-48 z-20 text-gray-900 bg-gray-50  border-l-gray-50 border-l-2 border border-byb-orange focus:ring-2 focus:ring-inset focus:outline-none"
+            placeholder="Location..." required="">
+
+          <!-- search button -->
+          <button onclick="runsearch()" id="searchbtn"
+            class="text-sm font-medium text-white bg-byb-orange-light rounded-r-lg px-2 border border-byb-orange hover:bg-byb-orange">
+            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
         </div>
-      </nav>
 
+      </div>
+
+
+
+      <!-- buttons -->
+
+      <div class=" hidden md:inline-flex h-12  text-sm md:text-base  text-white self-center justify-end">
+        <button type="button"
+          class="hidden lg:block px-2.5 py-2 mr-2  bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+          <a href="#blog">Reviews</a>
+        </button>
+        <button id="postbtn" type="button"
+          class="hidden lg:block px-2.5 py-2 mr-2  bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+          <a href="#blog">Post</a>
+        </button>
+        <button id="loginbtn" type="button"
+          class="px-2.5 py-2 bg-byb-orange-light bg-opacity-50 rounded-l-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+          Login
+        </button>
+        <button id="signupbtn" type="button"
+          class="px-2.5 py-2 whitespace-nowrap bg-byb-orange-light rounded-r-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- mobile menu -->
+
+      <div class="flex md:hidden mr-3">
+        <!-- search button -->
+        <a href="search"
+          class="font-medium text-white bg-byb-orange-light rounded-l px-3 py-2 border border-byb-orange hover:bg-byb-orange">
+          <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </a>
+        <button id="mobilebtn"
+          class="flex items-center px-3 py-2 border-2 rounded-r bg-byb-orange-light text-byb-orange border-byb-orange hover:text-white hover:border-white">
+          <svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+        <div id="mobilemenu"
+          class="hidden flex flex-col absolute mt-16 right-0 backdrop-blur-sm w-1/3 border-l border-b border-byb-orange pl-4 py-4 pr-2 text-white">
+
+          <button id="msignupbtn" type="button"
+            class="px-2.5 py-2 mb-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            Sign Up
+          </button>
+
+          <button id="mloginbtn" type="button"
+            class="px-2.5 py-2 mb-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            Login
+          </button>
+
+          <button id="mpostbtn" type="button"
+            class="px-2.5 py-2 mb-3 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            Post
+          </button>
+
+          <button type="button"
+            class="px-2.5 py-2 bg-byb-orange-light rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+            <a href="#blog">Reviews</a>
+          </button>
+        </div>
+      </div>
+
+    </nav>
       <!-- main -->
-
-
       <div class="grid grid-cols-10 gap-0 grid-flow-row-dense h-screen min-h-0 min-w-0">
         <!-- left -->
-
         <div class="col-span-3 px-3 flex flex-col">
           <!--filters -->
-
-          <div class="p-3 h-full my-3 bg-clip-box bg-gray-300 bg-opacity-50 text-center rounded-md">
+          <div class="p-3 h-full my-3 bg-clip-box bg-white bg-opacity-50 text-center rounded-lg ">
+            
+            <p class="text-3xl m-4 pb-6">Sort posts by:</p>
+            <!-- sort posts by -->
+            <select id="sort-posts" name="sort-posts"
+                class="block appearance-none w-full mb-4 bg-white border h-fit border-byb-orange hover:border-gray-500 px-4 py-2 pr-6 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option selected>Sort by..</option>
+                <option value="highest">Highest rated first</option>
+                <option value="lowest">Lowest rated first</option>
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+              </select>
+            <hr />
             <p class="text-3xl m-4 pb-6">Filter posts by:</p>
             <hr />
-            <!-- list -->
-            <div class="container my-5 flex justify-center">
-              <div class="flex text-2xl m-auto">
-                <div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
-                      type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
-                      Default checkbox
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
-                      type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
-                      Default checkbox
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
-                      type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
-                      Default checkbox
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
-                      type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
-                      Default checkbox
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
-                      type="checkbox" value="" id="flexCheckDefault" />
-                    <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
-                      Default checkbox
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input appearance-none h-6 w-6 border border-gray-300 rounded-sm bg-white bg-lime-800 bg-opacity-60  checked:border-blue-600 focus:outline-none transition duration-200 m-2 bg-no-repeat bg-center bg-contain float-left cursor-pointer"
-                      type="checkbox" value="" id="flexCheckChecked" checked />
-                    <label class="form-check-label inline-block text-gray-800" for="flexCheckChecked">
-                      Checked checkbox
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr />
-            <!-- tags -->
-            <div class="grid grid-cols-3 my-5 mx-4 gap-1">
-              <div class="content-box rounded-full bg-blue-50 text-3xl mx-2 my-3 py-3 px-5">
-                <p>Tag :)</p>
-              </div>
-              <div class="content-box rounded-full bg-blue-50 text-3xl mx-2 my-3 py-3 px-5">
-                <p>Tag :)</p>
-              </div>
-              <div class="content-box rounded-full bg-blue-50 text-3xl mx-2 my-3 py-3 px-5">
-                <p>Tag :)</p>
-              </div>
-              <div class="content-box rounded-full bg-blue-50 text-3xl mx-2 my-3 py-3 px-5">
-                <p>Tag :)</p>
-              </div>
-              <div class="content-box rounded-full bg-blue-50 text-3xl mx-2 my-3 py-3 px-5">
-                <p>Tag :)</p>
-              </div>
-              <div class="content-box rounded-full bg-blue-50 text-3xl mx-2 my-3 py-3 px-5">
-                <p>Tag :)</p>
-              </div>
+            <div class="flex w-full flex-col">
+              <!-- location type -->
+              <select id="location-type"
+              class="block appearance-none w-auto mb-4 bg-white border h-full border-byb-orange hover:border-gray-500 px-4 py-2 pr-6 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option selected>Location type..</option>
+              <option value="park">Parks</option>
+              <option value="hotel">Hotels</option>
+              <option value="restaurant">Restaurants</option>
+              <option value="shop">Shops</option>
+            </select>
+              <!--pet type -->
+              <select id="pet-type" name="pet-type"
+                class="block appearance-none w-full mb-4 bg-white border h-full border-byb-orange hover:border-gray-500 px-4 py-2 pr-6 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option selected>Pet type..</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+              </select>
+              <!-- rating -->
+              <select id="rating" name="rating"
+                class="block appearance-none w-full mb-4 bg-white border h-full border-byb-orange hover:border-gray-500 px-4 py-2 pr-6 rounded-lg shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option selected>Minimum rating..</option>
+                <option value="1">✪</option>
+                <option value="2">✪✪</option>
+                <option value="3">✪✪✪</option>
+                <option value="4">✪✪✪✪</option>
+                <option value="5">✪✪✪✪✪</option>
+              </select>
             </div>
             <hr />
           </div>
@@ -199,205 +188,20 @@
 
         <!-- right -->
 
+        
         <div class="col-span-7 p-3 flex-col flex items-center min-h-0">
-          <!-- recent -->
-          <div class="container flex justify-between bg-blue-50 rounded-md h-auto py-8 text-4xl px-5 m-4">
+          <!-- query info -->
+          <div class="container flex justify-center bg-olive-white rounded-md h-auto py-8 text-4xl px-5 m-4">
             <p>Query near Location</p>
-            <!-- sort -->
-            <button id="dropdownDefault" data-dropdown-toggle="dropdown"
-              class="text-white bg-orange-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              type="button">
-              Dropdown button
-              <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <!-- Dropdown menu -->
-            <div id="dropdown"
-              class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-              <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                <li>
-                  <a href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                </li>
-                <li>
-                  <a href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                </li>
-                <li>
-                  <a href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                </li>
-                <li>
-                  <a href="#"
-                    class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-                </li>
-              </ul>
-            </div>
           </div>
+          <!-- post results container -->
           <div
-            class="container flex flex-col bg-blue-500 bg-opacity-10 p-3 flex h-screen max-h-screen items-center overflow-y-auto overscroll-contain">
-            <!-- card -->
-
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
-              <div class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2">
-                <div class="grid grid-cols-5 gap-2">
-                  <!-- user-->
-
-                  <div class="col-span-2 w-auto h-auto block py-2 text-6xl text-center">
-                    <div
-                      class="container flex justify-between items-center col-span-3 bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center">
-                      <p>Posted by:</p>
-                    </div>
-                    <div class="flex items-center content-box w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85">
-                      <!-- pfp -->
-                      <img class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
-                        src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-                        alt="" />
-                      <div class="text-lg mx-2">
-                        <p>Username</p>
-                        <p>01/02/03</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- info -->
-
-                  <!-- location -->
-                  <div
-                    class="container flex justify-between items-center col-span-3 bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center">
-                    <p>Somewhere, Someplace</p>
-                    <!-- rating -->
-
-                    <div class="flex content-box rounded-full bg-blue-500 py-1 px-3 ml-auto">
-                      <!-- star -->
-                      <div class="text-4xl ml-2">
-                        <p>✪✪✪✪✪</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptates possimus magni facere ab veniam eaque natus
-                    officiis deserunt adipisci est. Corrupti perspiciatis
-                    dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                    officia!
-                  </p>
-                  <!-- post link -->
-                  <a class="text-blue-500 underline" href="https://www.w3schools.com">Continue reading........</a>
-                </div>
-              </div>
-            </div>
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
-              <div class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2">
-                <div class="grid grid-cols-5 gap-2">
-                  <!-- user-->
-
-                  <div class="col-span-2 w-auto h-auto block py-2 text-6xl text-center">
-                    <div
-                      class="container flex justify-between items-center col-span-3 bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center">
-                      <p>Posted by:</p>
-                    </div>
-                    <div class="flex items-center content-box w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85">
-                      <!-- pfp -->
-                      <img class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
-                        src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-                        alt="" />
-                      <div class="text-lg mx-2">
-                        <p>Username</p>
-                        <p>01/02/03</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- info -->
-
-                  <!-- location -->
-                  <div
-                    class="container flex justify-between items-center col-span-3 bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center">
-                    <p>Somewhere, Someplace</p>
-                    <!-- rating -->
-
-                    <div class="flex content-box rounded-full bg-blue-500 py-1 px-3 ml-auto">
-                      <!-- star -->
-                      <div class="text-4xl ml-2">
-                        <p>✪✪✪✪✪</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptates possimus magni facere ab veniam eaque natus
-                    officiis deserunt adipisci est. Corrupti perspiciatis
-                    dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                    officia!
-                  </p>
-                  <!-- post link -->
-                  <a class="text-blue-500 underline" href="https://www.w3schools.com">Continue reading........</a>
-                </div>
-              </div>
-            </div>
-            <div class="flex w-full my-2 shadow shadow-blue-500/40">
-              <div class="bg-blue-50 bg-opacity-25 rounded-md flex flex-col justify-between p-2">
-                <div class="grid grid-cols-5 gap-2">
-                  <!-- user-->
-
-                  <div class="col-span-2 w-auto h-auto block py-2 text-6xl text-center">
-                    <div
-                      class="container flex justify-between items-center col-span-3 bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center">
-                      <p>Posted by:</p>
-                    </div>
-                    <div class="flex items-center content-box w-full rounded-full py-1 px-3 bg-blue-300 bg-opacity-85">
-                      <!-- pfp -->
-                      <img class="w-12 h-12 mr-2 rounded-full shadow shadow-blue-500/40"
-                        src="https://microbewiki.kenyon.edu/images/thumb/9/98/PuppyDogEyes.jpg/100px-PuppyDogEyes.jpg"
-                        alt="" />
-                      <div class="text-lg mx-2">
-                        <p>Username</p>
-                        <p>01/02/03</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- info -->
-
-                  <!-- location -->
-                  <div
-                    class="container flex justify-between items-center col-span-3 bg-blue-50 text-center rounded-md 0 h-auto p-2 text-2xl text-center">
-                    <p>Somewhere, Someplace</p>
-                    <!-- rating -->
-
-                    <div class="flex content-box rounded-full bg-blue-500 py-1 px-3 ml-auto">
-                      <!-- star -->
-                      <div class="text-4xl ml-2">
-                        <p>✪✪✪✪✪</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="my-2 bg-clip-box p-6 bg-clip-box bg-blue-50 rounded-md">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptates possimus magni facere ab veniam eaque natus
-                    officiis deserunt adipisci est. Corrupti perspiciatis
-                    dolorem accusantium laudantium? Nemo saepe iusto quisquam
-                    officia!
-                  </p>
-                  <!-- post link -->
-                  <a class="text-blue-500 underline" href="https://www.w3schools.com">Continue reading........</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- end card -->
+            class="container flex-col bg-byb-orange-light bg-opacity-10 p-3 flex h-screen max-h-screen items-center overflow-y-auto overscroll-contain">
+            <!-- posts -->
           </div>
-
-          <!-- end postbox -->
         </div>
       </div>
-    </div>
+
 </body>
 
 </html>

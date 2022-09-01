@@ -1,0 +1,35 @@
+<!--Overlay Effect-->
+<div class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50" id="comment-modal">
+  <!--modal content-->
+  <section
+    class="relative text-center top-20 mx-3 mb-auto sm:mx-auto p-5 border w-auto sm:w-96 shadow-lg h-1/2 rounded-md bg-white">
+    <!-- x button -->
+    <button id="x-btn" type="button"
+      class="absolute top-0 right-0 box-content w-4 h-4 pt-2 px-4 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"><svg
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </button>
+    <!-- form -->
+    <form method="get"
+      class="px-6 mt-10 mb-3 w-full text-gray-800 max-h-32 flex flex-col items-center justify-center lg:justify-start">
+      <!-- textarea -->
+      <div class="flex flex-col justify-start mb-3 xl:w-96 max-h-fit">
+        <label for="form-comment-body" class="form-label inline-block mb-2 text-gray-700">Bark up this
+          tree!</label>
+        <textarea
+          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+          id="form-comment-body" name="form-comment-body" rows="3" placeholder="Your comment"
+          required>
+        </textarea>
+      </div>
+      <!-- post btn -->
+      <input id="comment-submit" type="submit" value="Submit comment"
+        class="px-2.5 py-2 self-end my-3 bg-byb-orange-light w-full rounded-lg border border-byb-orange hover:bg-byb-orange focus:ring focus:outline-none focus:ring-byb-orange">
+      </input>
+
+    </form>
+  </section>
+</div>
