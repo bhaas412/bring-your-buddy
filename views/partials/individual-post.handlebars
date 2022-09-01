@@ -58,11 +58,10 @@
       <section class="post-comment-section flex flex-col sm:h-72 items-center overflow-y-auto sm:overscroll-contain opacity-90">
 
         <!-- comment card goes here -->
-        {{#each comments as |comment|}}
+        {{comments as |comment|}}
 
       </section>
     </div>
   </section>
-  {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}}
+<script src="/js/comment.js"></script>
+
